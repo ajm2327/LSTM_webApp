@@ -1,0 +1,82 @@
+2024-12-04 16:30:37,094 - root - ERROR - Error loading model: Version models_saved/ not found
+2024-12-04 16:30:37,094 - root - ERROR - Error loading model: Version models_saved/ not found
+2024-12-04 16:30:37,104 - werkzeug - WARNING -  * Debugger is active!
+2024-12-04 16:30:37,107 - werkzeug - INFO -  * Debugger PIN: 695-599-079
+2024-12-04 16:30:47,464 - root - ERROR - Error loading model: Version models_saved/ not found
+2024-12-04 16:30:47,464 - root - ERROR - Error loading model: Version models_saved/ not found
+2024-12-04 16:30:47,473 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-04 16:30:47,473 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-12-04 16:30:47,474 - werkzeug - INFO -  * Restarting with stat
+2024-12-04 16:30:50,977 - root - ERROR - Error loading model: Version models_saved/ not found
+2024-12-04 16:30:50,977 - root - ERROR - Error loading model: Version models_saved/ not found
+2024-12-04 16:30:50,988 - werkzeug - WARNING -  * Debugger is active!
+2024-12-04 16:30:50,991 - werkzeug - INFO -  * Debugger PIN: 695-599-079
+2024-12-04 16:30:51,034 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2024 16:30:51] "GET / HTTP/1.1" 200 -
+2024-12-04 16:31:23,118 - root - ERROR - Error retrieving logs: slice indices must be integers or None or have an __index__ method
+2024-12-04 16:31:23,118 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2024 16:31:23] "[35m[1mGET /logs?type=app&lines=100 HTTP/1.1[0m" 500 -
+2024-12-04 16:31:31,660 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2024 16:31:31] "[33mGET /logs?type=error&lines=100 HTTP/1.1[0m" 404 -
+2024-12-04 16:36:34,124 - werkzeug - INFO -  * Detected change in '/home/ajm2327/LSTM_Tool/app.py', reloading
+2024-12-04 16:36:34,713 - werkzeug - INFO -  * Restarting with stat
+2024-12-04 16:36:37,554 - root - ERROR - Error loading model: Version models_saved/ not found
+2024-12-04 16:36:37,555 - root - ERROR - Error loading model: Version models_saved/ not found
+2024-12-04 16:36:37,560 - werkzeug - WARNING -  * Debugger is active!
+2024-12-04 16:36:37,563 - werkzeug - INFO -  * Debugger PIN: 695-599-079
+2024-12-04 16:36:37,593 - root - ERROR - Error retrieving logs: slice indices must be integers or None or have an __index__ method
+2024-12-04 16:36:37,594 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2024 16:36:37] "[35m[1mGET /logs?type=app&lines=100 HTTP/1.1[0m" 500 -
+2024-12-04 16:36:41,734 - root - ERROR - Error retrieving logs: slice indices must be integers or None or have an __index__ method
+2024-12-04 16:36:41,735 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2024 16:36:41] "[35m[1mGET /logs?type=error&lines=100 HTTP/1.1[0m" 500 -
+2024-12-04 16:38:29,243 - werkzeug - INFO -  * Detected change in '/home/ajm2327/LSTM_Tool/app.py', reloading
+2024-12-04 16:38:29,792 - werkzeug - INFO -  * Restarting with stat
+2024-12-04 16:38:32,941 - root - ERROR - Error loading model: Version models_saved/ not found
+2024-12-04 16:38:32,941 - root - ERROR - Error loading model: Version models_saved/ not found
+2024-12-04 16:38:32,948 - werkzeug - WARNING -  * Debugger is active!
+2024-12-04 16:38:32,951 - werkzeug - INFO -  * Debugger PIN: 695-599-079
+2024-12-04 16:38:39,155 - werkzeug - INFO -  * Detected change in '/home/ajm2327/LSTM_Tool/app.py', reloading
+2024-12-04 16:38:39,748 - werkzeug - INFO -  * Restarting with stat
+2024-12-04 16:38:42,586 - root - ERROR - Error loading model: Version models_saved/ not found
+2024-12-04 16:38:42,587 - root - ERROR - Error loading model: Version models_saved/ not found
+2024-12-04 16:38:42,592 - werkzeug - WARNING -  * Debugger is active!
+2024-12-04 16:38:42,594 - werkzeug - INFO -  * Debugger PIN: 695-599-079
+2024-12-04 16:38:43,713 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2024 16:38:43] "GET /logs?type=app&lines=100 HTTP/1.1" 200 -
+2024-12-04 16:38:48,313 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2024 16:38:48] "GET /logs?type=error&lines=100 HTTP/1.1" 200 -
+2024-12-04 16:40:14,211 - root - ERROR - Error loading model: Version models_saved/ not found
+2024-12-04 16:40:14,211 - root - ERROR - Error loading model: Version models_saved/ not found
+2024-12-04 16:40:14,218 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-04 16:40:14,219 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-12-04 16:40:14,220 - werkzeug - INFO -  * Restarting with stat
+2024-12-04 16:40:18,133 - root - ERROR - Error loading model: Version models_saved/ not found
+2024-12-04 16:40:18,133 - root - ERROR - Error loading model: Version models_saved/ not found
+2024-12-04 16:40:18,141 - werkzeug - WARNING -  * Debugger is active!
+2024-12-04 16:40:18,144 - werkzeug - INFO -  * Debugger PIN: 695-599-079
+2024-12-04 16:40:18,683 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2024 16:40:18] "GET / HTTP/1.1" 200 -
+2024-12-04 16:40:57,861 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2024 16:40:57] "GET / HTTP/1.1" 200 -
+2024-12-04 16:41:07,026 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2024 16:41:07] "GET /health HTTP/1.1" 200 -
+2024-12-04 16:41:13,283 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2024 16:41:13] "GET /models HTTP/1.1" 200 -
+2024-12-04 16:41:20,979 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2024 16:41:20] "GET /models/1.0.0 HTTP/1.1" 200 -
+2024-12-04 16:41:35,493 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2024 16:41:35] "POST /predict HTTP/1.1" 200 -
+2024-12-04 16:42:24,915 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2024 16:42:24] "POST /train HTTP/1.1" 200 -
+2024-12-04 16:42:43,639 - metrics - INFO - Metrics calculated successfully: {"mse": 179084.06623488295, "rmse": 423.1832537268966, "mae": 422.6409405075008, "r2": -3233601.313103628}
+2024-12-04 16:42:43,640 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2024 16:42:43] "GET /metrics HTTP/1.1" 200 -
+2024-12-04 16:42:50,454 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2024 16:42:50] "GET /logs?type=app&lines=100 HTTP/1.1" 200 -
+2024-12-04 16:42:59,255 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2024 16:42:59] "GET /logs?type=error&lines=100 HTTP/1.1" 200 -
+2024-12-04 16:47:45,854 - werkzeug - INFO -  * Detected change in '/home/ajm2327/LSTM_Tool/app.py', reloading
+2024-12-04 16:47:46,448 - werkzeug - INFO -  * Restarting with stat
+2024-12-04 16:47:50,651 - root - INFO - Model loaded successfully
+2024-12-04 16:47:50,657 - werkzeug - WARNING -  * Debugger is active!
+2024-12-04 16:47:50,659 - werkzeug - INFO -  * Debugger PIN: 695-599-079
+2024-12-04 16:48:16,274 - werkzeug - INFO -  * Detected change in '/home/ajm2327/LSTM_Tool/app.py', reloading
+2024-12-04 16:48:16,746 - werkzeug - INFO -  * Restarting with stat
+2024-12-04 16:48:19,962 - root - INFO - Model loaded successfully
+2024-12-04 16:48:19,969 - werkzeug - WARNING -  * Debugger is active!
+2024-12-04 16:48:19,972 - werkzeug - INFO -  * Debugger PIN: 695-599-079
+2024-12-04 16:48:54,735 - root - INFO - Model loaded successfully
+2024-12-04 16:48:54,741 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-04 16:48:54,741 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-12-04 16:48:54,742 - werkzeug - INFO -  * Restarting with stat
+2024-12-04 16:48:57,654 - root - INFO - Model loaded successfully
+2024-12-04 16:48:57,659 - werkzeug - WARNING -  * Debugger is active!
+2024-12-04 16:48:57,662 - werkzeug - INFO -  * Debugger PIN: 695-599-079
+2024-12-04 16:49:03,666 - werkzeug - INFO - 127.0.0.1 - - [04/Dec/2024 16:49:03] "GET / HTTP/1.1" 200 -
