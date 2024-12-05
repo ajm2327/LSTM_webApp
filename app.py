@@ -1,12 +1,10 @@
 from flask import Flask, request, jsonify
 from flask_login import LoginManager
-from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
 from flask_cors import CORS
 from models.lstm_model import StockPredictor
 from utils.metrics import MetricsManager
 from utils.logger_config import setup_logging
-from database.config import db_config
+from database.db import db, migrate
 from models.user import User
 import logging
 from datetime import datetime, timedelta
@@ -16,7 +14,7 @@ import json
 from auth.routes import auth, login_manager
 from dotenv import load_dotenv
 
-
+load_dotenv()
 
 
 #initialize logging system
@@ -25,15 +23,14 @@ logger = logging.getLogger('api')
 #Configuration
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'dev-secret-key')
-app.config['SQLALCHEMY_DATABASE_URI'] = db_config.get_database_url()
-app.config['SQLALCHEMY_TRACK_NOTIFICATIONS'] = False
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SESSION_TYPE'] = 'filesystem'
 
 #initialize extensions
-db = SQLAlchemy(app)
-migrate = Migrate(app, db)
+db.init_app(app)
+migrate.init_app(app,db)
 CORS(app)
-login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = 'auth.login'
 

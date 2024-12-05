@@ -102,3 +102,60 @@
 2024-12-05 15:44:37,511 - root - INFO - Model loaded successfully
 2024-12-05 15:44:54,338 - root - INFO - Model loaded successfully
 2024-12-05 15:45:14,159 - root - INFO - Model loaded successfully
+2024-12-05 16:00:18,392 - root - INFO - Model loaded successfully
+2024-12-05 16:04:37,742 - root - INFO - Model loaded successfully
+2024-12-05 16:08:01,735 - root - INFO - Model loaded successfully
+2024-12-05 16:08:01,767 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-05 16:08:01,768 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-12-05 16:08:01,769 - werkzeug - INFO -  * Restarting with stat
+2024-12-05 16:08:07,051 - root - INFO - Model loaded successfully
+2024-12-05 16:08:07,077 - werkzeug - WARNING -  * Debugger is active!
+2024-12-05 16:08:07,116 - werkzeug - INFO -  * Debugger PIN: 110-908-657
+2024-12-05 16:08:07,373 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2024 16:08:07] "GET / HTTP/1.1" 200 -
+2024-12-05 16:09:29,610 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2024 16:09:29] "[35m[1mPOST /auth/register HTTP/1.1[0m" 500 -
+2024-12-05 16:11:45,091 - werkzeug - INFO -  * Detected change in '/home/ajm2327/LSTM_Tool/models/user.py', reloading
+2024-12-05 16:11:45,765 - werkzeug - INFO -  * Restarting with stat
+2024-12-05 16:15:06,682 - root - INFO - Model loaded successfully
+2024-12-05 16:15:06,710 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-05 16:15:06,710 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-12-05 16:15:06,711 - werkzeug - INFO -  * Restarting with stat
+2024-12-05 16:15:10,624 - root - INFO - Model loaded successfully
+2024-12-05 16:15:10,655 - werkzeug - WARNING -  * Debugger is active!
+2024-12-05 16:15:10,661 - werkzeug - INFO -  * Debugger PIN: 110-908-657
+2024-12-05 16:15:32,767 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2024 16:15:32] "[35m[1mPOST /auth/register HTTP/1.1[0m" 500 -
+2024-12-05 16:17:03,981 - werkzeug - INFO -  * Detected change in '/home/ajm2327/LSTM_Tool/app.py', reloading
+2024-12-05 16:17:04,585 - werkzeug - INFO -  * Restarting with stat
+2024-12-05 16:17:08,127 - root - INFO - Model loaded successfully
+2024-12-05 16:17:08,151 - werkzeug - WARNING -  * Debugger is active!
+2024-12-05 16:17:08,154 - werkzeug - INFO -  * Debugger PIN: 110-908-657
+2024-12-05 16:17:31,873 - werkzeug - INFO -  * Detected change in '/home/ajm2327/LSTM_Tool/app.py', reloading
+2024-12-05 16:17:32,610 - werkzeug - INFO -  * Restarting with stat
+2024-12-05 16:17:37,964 - root - INFO - Model loaded successfully
+2024-12-05 16:17:37,993 - werkzeug - WARNING -  * Debugger is active!
+2024-12-05 16:17:37,997 - werkzeug - INFO -  * Debugger PIN: 110-908-657
+2024-12-05 16:23:41,027 - werkzeug - INFO -  * Detected change in '/home/ajm2327/LSTM_Tool/app.py', reloading
+2024-12-05 16:23:41,782 - werkzeug - INFO -  * Restarting with stat
+2024-12-05 16:25:03,575 - root - INFO - Model loaded successfully
+2024-12-05 16:28:13,327 - root - INFO - Model loaded successfully
+2024-12-05 16:28:13,412 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-05 16:28:13,412 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-12-05 16:28:13,413 - werkzeug - INFO -  * Restarting with stat
+2024-12-05 16:28:17,119 - root - INFO - Model loaded successfully
+2024-12-05 16:28:17,150 - werkzeug - WARNING -  * Debugger is active!
+2024-12-05 16:28:17,152 - werkzeug - INFO -  * Debugger PIN: 110-908-657
+2024-12-05 16:28:37,832 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2024 16:28:37] "[35m[1mPOST /auth/register HTTP/1.1[0m" 201 -
+2024-12-05 16:29:05,694 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2024 16:29:05] "POST /auth/login HTTP/1.1" 200 -
+2024-12-05 16:29:13,441 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2024 16:29:13] "GET /auth/google/auth-url HTTP/1.1" 200 -
+2024-12-05 16:29:29,475 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2024 16:29:29] "[32mGET /auth/status HTTP/1.1[0m" 302 -
+2024-12-05 16:30:08,065 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2024 16:30:08] "[32mGET /auth/logout HTTP/1.1[0m" 302 -
+2024-12-05 16:30:19,147 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2024 16:30:19] "GET /models HTTP/1.1" 200 -
+2024-12-05 16:30:28,009 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2024 16:30:28] "GET /models/1.0.0 HTTP/1.1" 200 -
+2024-12-05 16:30:53,974 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2024 16:30:53] "POST /train HTTP/1.1" 200 -
+2024-12-05 16:31:12,856 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2024 16:31:12] "POST /predict HTTP/1.1" 200 -
+2024-12-05 16:31:50,770 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2024 16:31:50] "GET /health HTTP/1.1" 200 -
+2024-12-05 16:31:56,425 - metrics - INFO - Metrics calculated successfully: {"mse": 30585.923160664926, "rmse": 174.88831624972815, "mae": 174.44461426391766, "r2": -479068.9685489897}
+2024-12-05 16:31:56,426 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2024 16:31:56] "GET /metrics HTTP/1.1" 200 -
+2024-12-05 16:32:03,538 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2024 16:32:03] "GET /logs?type=app&lines=100 HTTP/1.1" 200 -
