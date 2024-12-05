@@ -1,20 +1,50 @@
 from flask import Flask, request, jsonify
+from flask_login import LoginManager
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
+from flask_cors import CORS
 from models.lstm_model import StockPredictor
 from utils.metrics import MetricsManager
 from utils.logger_config import setup_logging
+from database.config import db_config
+from models.user import User
 import logging
 from datetime import datetime, timedelta
 import yfinance as yf
 import os
 import json
+from auth.routes import auth, login_manager
+from dotenv import load_dotenv
+
+
 
 
 #initialize logging system
 loggers = setup_logging()
 logger = logging.getLogger('api')
-
+#Configuration
 app = Flask(__name__)
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'dev-secret-key')
+app.config['SQLALCHEMY_DATABASE_URI'] = db_config.get_database_url()
+app.config['SQLALCHEMY_TRACK_NOTIFICATIONS'] = False
+app.config['SESSION_TYPE'] = 'filesystem'
+
+#initialize extensions
+db = SQLAlchemy(app)
+migrate = Migrate(app, db)
+CORS(app)
+login_manager = LoginManager()
+login_manager.init_app(app)
+login_manager.login_view = 'auth.login'
+
+#initialize stock predictor
 predictor = StockPredictor()
+app.register_blueprint(auth, url_prefix='/auth')
+
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(user_id)
 
 def validate_ticker(ticker):
     """validate if ticker exists and can be fetched"""
@@ -259,4 +289,6 @@ def get_logs():
         return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
+    with app.app_context():
+        db.create_all()
     app.run(debug=True)

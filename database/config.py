@@ -4,8 +4,15 @@ from sqlalchemy.orm import sessionmaker, declarative_base
 from sqlalchemy.pool import QueuePool
 from contextlib import contextmanager
 import logging
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
+
+
 
 logger = logging.getLogger(__name__)
+
+db = SQLAlchemy()
+migrate = Migrate()
 
 #Base class for SQlAlchemy models
 Base = declarative_base()
@@ -13,7 +20,7 @@ Base = declarative_base()
 class DatabaseConfig:
     def __init__(self):
         #get database connection details from environment variables
-        self.DB_USER = os.getenv('DB_USER'. 'lstm_user')
+        self.DB_USER = os.getenv('DB_USER', 'lstm_user')
         self.DB_PASSWORD = os.getenv('DB_PASSWORD', '')
         self.DB_HOST = os.getenv('DB_HOST', 'localhost')
         self.DB_PORT = os.getenv('DB_PORT', '5432')
@@ -53,7 +60,7 @@ class DatabaseConfig:
 
             #Create all tables
             Base.metadata.create_all(self.engine)
-            logger.info("Database initialize failed: {str(e)}")
+            logger.info("Database initialized successfully")
         except Exception as e:
             logger.error(f"Database initialization failed: {str(e)}")
             raise
@@ -71,6 +78,17 @@ class DatabaseConfig:
             raise
         finally:
             session.close()
+    
+    def init_app(self, app):
+        """initialize flask app with SQLAlchemy"""
+        app.config['SQLALCHEMY_DATABASE_URI'] = self.get_database_url()
+        app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+
+        db.init_app(app)
+        migrate.init_app(app, db)
+
+        #initialize sqlalchemy session pool
+        self.init_db()
 
 #Create a singleton instance
 db_config = DatabaseConfig()

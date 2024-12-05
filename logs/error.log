@@ -17,3 +17,5 @@
 2024-12-04 16:40:14,211 - root - ERROR - Error loading model: Version models_saved/ not found
 2024-12-04 16:40:18,133 - root - ERROR - Error loading model: Version models_saved/ not found
 2024-12-04 16:40:18,133 - root - ERROR - Error loading model: Version models_saved/ not found
+2024-12-05 15:27:37,348 - flask_migrate - ERROR - Error: Directory migrations already exists and is not empty
+2024-12-05 15:34:07,781 - flask_migrate - ERROR - Error: Directory migrations already exists and is not empty
