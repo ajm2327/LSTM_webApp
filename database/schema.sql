@@ -22,6 +22,8 @@ CREATE TABLE api_keys(
     is_active BOOLEAN DEFAULT true,
     CONSTRAINT fk_user FOREIGN KEY(user_id) REFERENCES users(user_id)
 );
+ALTER TABLE api_keys
+ADD COLUMN expires_at TIMESTAMP WITH TIME ZONE;
 
 --historical stock data cache
 CREATE TABLE historical_data (
