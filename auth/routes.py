@@ -8,11 +8,14 @@ from database import db
 import os
 import json
 
+
 auth = Blueprint('auth', __name__)
 login_manager = LoginManager()
 google_client_id = os.getenv('GOOGLE_CLIENT_ID')
 google_client_secret = os.getenv('GOOGLE_CLIENT_SECRET')
 client = WebApplicationClient(google_client_id)
+
+
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -126,6 +129,8 @@ def google_callback():
             }
         })
     return jsonify({"error": "User email not verified"}), 400
+
+
 
 @auth.route("/logout")
 @login_required

@@ -12,6 +12,7 @@ import yfinance as yf
 import os
 import json
 from auth.routes import auth, login_manager
+from auth.api_keys import api_keys
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -37,6 +38,7 @@ login_manager.login_view = 'auth.login'
 #initialize stock predictor
 predictor = StockPredictor()
 app.register_blueprint(auth, url_prefix='/auth')
+app.register_blueprint(api_keys, url_prefix='/api')
 
 
 @login_manager.user_loader
