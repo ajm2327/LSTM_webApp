@@ -159,3 +159,527 @@
 2024-12-05 16:31:56,425 - metrics - INFO - Metrics calculated successfully: {"mse": 30585.923160664926, "rmse": 174.88831624972815, "mae": 174.44461426391766, "r2": -479068.9685489897}
 2024-12-05 16:31:56,426 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2024 16:31:56] "GET /metrics HTTP/1.1" 200 -
 2024-12-05 16:32:03,538 - werkzeug - INFO - 127.0.0.1 - - [05/Dec/2024 16:32:03] "GET /logs?type=app&lines=100 HTTP/1.1" 200 -
+2024-12-11 12:51:09,875 - root - INFO - Model loaded successfully
+2024-12-11 12:51:24,498 - root - INFO - Model loaded successfully
+2024-12-11 12:53:42,829 - root - INFO - Model loaded successfully
+2024-12-11 12:53:42,872 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-11 12:53:42,872 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-12-11 12:53:42,874 - werkzeug - INFO -  * Restarting with stat
+2024-12-11 12:53:47,098 - root - INFO - Model loaded successfully
+2024-12-11 12:53:47,144 - werkzeug - WARNING -  * Debugger is active!
+2024-12-11 12:53:47,161 - werkzeug - INFO -  * Debugger PIN: 707-519-381
+2024-12-11 12:53:47,202 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:53:47] "GET / HTTP/1.1" 200 -
+2024-12-11 12:54:17,228 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:54:17] "[31m[1mPOST /auth/register HTTP/1.1[0m" 400 -
+2024-12-11 12:54:27,913 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:54:27] "POST /auth/login HTTP/1.1" 200 -
+2024-12-11 12:54:42,797 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:54:42] "[32mPOST /api/keys/create HTTP/1.1[0m" 302 -
+2024-12-11 12:55:15,981 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:55:15] "[32mGET /api/keys/list HTTP/1.1[0m" 302 -
+2024-12-11 12:55:40,785 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:55:40] "[32mGET /api/keys/status/your_api_key_here HTTP/1.1[0m" 302 -
+2024-12-11 12:56:30,492 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:56:30] "[32mGET /api/keys/status/your_api_key_here HTTP/1.1[0m" 302 -
+2024-12-11 12:57:29,246 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:29] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:29,635 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:29] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:30,116 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:30] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:30,510 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:30] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:30,876 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:30] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:31,338 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:31] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:31,857 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:31] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:32,250 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:32] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:32,662 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:32] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:33,076 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:33] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:33,470 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:33] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:33,844 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:33] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:34,378 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:34] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:34,755 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:34] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:35,176 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:35] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:35,563 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:35] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:37,384 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:37] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:37,750 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:37] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:38,106 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:38] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:38,548 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:38] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:38,972 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:38] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:39,381 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:39] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:39,734 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:39] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:40,081 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:40] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:40,441 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:40] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:40,800 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:40] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:41,167 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:41] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:41,607 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:41] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:41,969 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:41] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:42,374 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:42] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:42,782 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:42] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:43,190 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:43] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:43,671 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:43] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:44,048 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:44] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:44,487 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:44] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:44,914 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:44] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:45,414 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:45] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:45,810 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:45] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:46,245 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:46] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:46,603 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:46] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:46,973 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:46] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:47,388 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:47] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:47,777 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:47] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:48,137 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:48] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:48,543 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:48] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:48,965 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:48] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:49,368 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:49] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:49,768 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:49] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:50,240 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:50] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:50,666 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:50] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:51,173 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:51] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:51,547 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:51] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:51,927 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:51] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:52,365 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:52] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:52,819 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:52] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:53,186 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:53] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:53,519 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:53] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:53,943 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:53] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:54,290 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:54] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:54,637 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:54] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:55,072 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:55] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:55,449 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:55] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:55,920 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:55] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:56,321 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:56] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:56,687 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:56] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:57,064 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:57] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:57,428 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:57] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:57,802 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:57] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:58,185 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:58] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:58,558 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:58] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:58,901 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:58] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:59,246 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:59] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:57:59,671 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:57:59] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:58:00,031 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:58:00] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:58:00,447 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:58:00] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:58:00,839 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:58:00] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:58:01,220 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:58:01] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:58:01,719 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:58:01] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:58:02,118 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:58:02] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:58:02,504 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:58:02] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:58:02,858 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:58:02] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:58:03,255 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:58:03] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:58:03,659 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:58:03] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:58:04,008 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:58:04] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:58:04,489 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:58:04] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:58:04,848 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:58:04] "POST /predict HTTP/1.1" 200 -
+2024-12-11 12:58:19,463 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:58:19] "[32mPOST /api/keys/revoke/your_api_key_here HTTP/1.1[0m" 302 -
+2024-12-11 12:58:31,469 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:58:31] "[31m[1mPOST /predict HTTP/1.1[0m" 400 -
+2024-12-11 12:58:42,601 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:58:42] "[31m[1mPOST /predict HTTP/1.1[0m" 400 -
+2024-12-11 12:58:56,006 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:58:56] "[31m[1mPOST /predict HTTP/1.1[0m" 400 -
+2024-12-11 12:59:49,925 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:59:49] "[32mPOST /api/keys/create HTTP/1.1[0m" 302 -
+2024-12-11 12:59:49,935 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:59:49] "[32mPOST /api/keys/create HTTP/1.1[0m" 302 -
+2024-12-11 12:59:49,944 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:59:49] "[32mPOST /api/keys/create HTTP/1.1[0m" 302 -
+2024-12-11 12:59:49,955 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:59:49] "[32mPOST /api/keys/create HTTP/1.1[0m" 302 -
+2024-12-11 12:59:49,962 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:59:49] "[32mPOST /api/keys/create HTTP/1.1[0m" 302 -
+2024-12-11 12:59:49,972 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:59:49] "[32mPOST /api/keys/create HTTP/1.1[0m" 302 -
+2024-12-11 13:00:07,499 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 13:00:07] "GET /logs?type=app&lines=100 HTTP/1.1" 200 -
+2024-12-11 13:00:13,533 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 13:00:13] "GET /logs?type=error&lines=100 HTTP/1.1" 200 -
+2024-12-18 10:36:35,858 - root - INFO - Model loaded successfully
+2024-12-18 10:36:57,227 - root - INFO - Model loaded successfully
+2024-12-18 10:36:57,284 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-18 10:36:57,284 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-12-18 10:36:57,286 - werkzeug - INFO -  * Restarting with stat
+2024-12-18 10:37:01,194 - root - INFO - Model loaded successfully
+2024-12-18 10:37:01,226 - werkzeug - WARNING -  * Debugger is active!
+2024-12-18 10:37:01,229 - werkzeug - INFO -  * Debugger PIN: 728-137-301
+2024-12-18 10:37:13,355 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 10:37:13] "GET / HTTP/1.1" 200 -
+2024-12-18 10:37:30,307 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 10:37:30] "[31m[1mPOST /auth/register HTTP/1.1[0m" 400 -
+2024-12-18 10:37:37,583 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 10:37:37] "POST /auth/login HTTP/1.1" 200 -
+2024-12-18 10:37:46,734 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 10:37:46] "[32mPOST /api/keys/create HTTP/1.1[0m" 302 -
+2024-12-18 10:40:27,894 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 10:40:27] "POST /auth/login HTTP/1.1" 200 -
+2024-12-18 10:42:11,685 - auth - ERROR - Error creating API key: (str(e))
+2024-12-18 10:42:11,688 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 10:42:11] "[35m[1mPOST /api/keys/create HTTP/1.1[0m" 500 -
+2024-12-18 10:43:22,661 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 10:43:22] "[32mPOST /api/keys/create HTTP/1.1[0m" 302 -
+2024-12-18 10:45:55,290 - auth - ERROR - Error creating API key: (str(e))
+2024-12-18 10:45:55,293 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 10:45:55] "[35m[1mPOST /api/keys/create HTTP/1.1[0m" 500 -
+2024-12-18 10:47:33,180 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 10:47:33] "[35m[1mPOST /auth/register HTTP/1.1[0m" 201 -
+2024-12-18 10:47:59,654 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 10:47:59] "POST /auth/login HTTP/1.1" 200 -
+2024-12-18 10:49:53,300 - auth - ERROR - Error creating API key: (str(e))
+2024-12-18 10:49:53,301 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 10:49:53] "[35m[1mPOST /api/keys/create HTTP/1.1[0m" 500 -
+2024-12-18 10:50:22,738 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 10:50:22] "GET /auth/status HTTP/1.1" 200 -
+2024-12-18 10:55:22,564 - werkzeug - INFO -  * Detected change in '/home/ajm2327/LSTM_Tool/auth/api_keys.py', reloading
+2024-12-18 10:55:23,371 - werkzeug - INFO -  * Restarting with stat
+2024-12-18 10:55:28,186 - root - INFO - Model loaded successfully
+2024-12-18 10:55:28,214 - werkzeug - WARNING -  * Debugger is active!
+2024-12-18 10:55:28,217 - werkzeug - INFO -  * Debugger PIN: 728-137-301
+2024-12-18 10:55:30,492 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 10:55:30] "GET /auth/status HTTP/1.1" 200 -
+2024-12-18 10:55:45,743 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 10:55:45] "GET /auth/status HTTP/1.1" 200 -
+2024-12-18 10:55:53,610 - auth - ERROR - Error creating API key: Textual SQL expression '\n                        ...' should be explicitly declared as text('\n                        ...')
+2024-12-18 10:55:53,612 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 10:55:53] "[35m[1mPOST /api/keys/create HTTP/1.1[0m" 500 -
+2024-12-18 11:01:44,449 - werkzeug - INFO -  * Detected change in '/home/ajm2327/LSTM_Tool/auth/api_keys.py', reloading
+2024-12-18 11:01:45,199 - werkzeug - INFO -  * Restarting with stat
+2024-12-18 11:01:49,675 - root - INFO - Model loaded successfully
+2024-12-18 11:01:49,714 - werkzeug - WARNING -  * Debugger is active!
+2024-12-18 11:01:49,717 - werkzeug - INFO -  * Debugger PIN: 728-137-301
+2024-12-18 11:02:29,273 - werkzeug - INFO -  * Detected change in '/home/ajm2327/LSTM_Tool/auth/api_keys.py', reloading
+2024-12-18 11:02:30,005 - werkzeug - INFO -  * Restarting with stat
+2024-12-18 11:02:34,448 - root - INFO - Model loaded successfully
+2024-12-18 11:02:34,478 - werkzeug - WARNING -  * Debugger is active!
+2024-12-18 11:02:34,480 - werkzeug - INFO -  * Debugger PIN: 728-137-301
+2024-12-18 11:03:18,071 - werkzeug - INFO -  * Detected change in '/home/ajm2327/LSTM_Tool/auth/api_keys.py', reloading
+2024-12-18 11:03:18,790 - werkzeug - INFO -  * Restarting with stat
+2024-12-18 11:03:22,718 - root - INFO - Model loaded successfully
+2024-12-18 11:03:22,743 - werkzeug - WARNING -  * Debugger is active!
+2024-12-18 11:03:22,749 - werkzeug - INFO -  * Debugger PIN: 728-137-301
+2024-12-18 11:03:41,925 - root - INFO - Model loaded successfully
+2024-12-18 11:03:41,953 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-18 11:03:41,953 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-12-18 11:03:41,954 - werkzeug - INFO -  * Restarting with stat
+2024-12-18 11:03:45,787 - root - INFO - Model loaded successfully
+2024-12-18 11:03:45,812 - werkzeug - WARNING -  * Debugger is active!
+2024-12-18 11:03:45,815 - werkzeug - INFO -  * Debugger PIN: 728-137-301
+2024-12-18 11:04:10,546 - auth - ERROR - Error creating API key: Textual SQL expression '\n                        ...' should be explicitly declared as text('\n                        ...')
+2024-12-18 11:04:10,548 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 11:04:10] "[35m[1mPOST /api/keys/create HTTP/1.1[0m" 500 -
+2024-12-18 11:43:17,560 - root - INFO - Model loaded successfully
+2024-12-18 11:43:17,633 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-18 11:43:17,634 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-12-18 11:43:17,635 - werkzeug - INFO -  * Restarting with stat
+2024-12-18 11:43:21,250 - root - INFO - Model loaded successfully
+2024-12-18 11:43:21,277 - werkzeug - WARNING -  * Debugger is active!
+2024-12-18 11:43:21,321 - werkzeug - INFO -  * Debugger PIN: 728-137-301
+2024-12-18 11:43:34,515 - auth - ERROR - Error creating API key: Textual SQL expression '\n                        ...' should be explicitly declared as text('\n                        ...')
+2024-12-18 11:43:34,518 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 11:43:34] "[35m[1mPOST /api/keys/create HTTP/1.1[0m" 500 -
+2024-12-18 11:48:30,378 - werkzeug - INFO -  * Detected change in '/home/ajm2327/LSTM_Tool/auth/middleware.py', reloading
+2024-12-18 11:48:31,097 - werkzeug - INFO -  * Restarting with stat
+2024-12-18 11:48:35,084 - root - INFO - Model loaded successfully
+2024-12-18 11:48:35,112 - werkzeug - WARNING -  * Debugger is active!
+2024-12-18 11:48:35,115 - werkzeug - INFO -  * Debugger PIN: 728-137-301
+2024-12-18 11:51:26,462 - werkzeug - INFO -  * Detected change in '/home/ajm2327/LSTM_Tool/auth/middleware.py', reloading
+2024-12-18 11:51:27,158 - werkzeug - INFO -  * Restarting with stat
+2024-12-18 11:51:30,511 - root - INFO - Model loaded successfully
+2024-12-18 11:51:30,539 - werkzeug - WARNING -  * Debugger is active!
+2024-12-18 11:51:30,541 - werkzeug - INFO -  * Debugger PIN: 728-137-301
+2024-12-18 11:51:38,780 - werkzeug - INFO -  * Detected change in '/home/ajm2327/LSTM_Tool/auth/middleware.py', reloading
+2024-12-18 11:51:39,447 - werkzeug - INFO -  * Restarting with stat
+2024-12-18 11:51:44,399 - root - INFO - Model loaded successfully
+2024-12-18 11:51:44,426 - werkzeug - WARNING -  * Debugger is active!
+2024-12-18 11:51:44,428 - werkzeug - INFO -  * Debugger PIN: 728-137-301
+2024-12-18 11:52:04,977 - werkzeug - INFO -  * Detected change in '/home/ajm2327/LSTM_Tool/auth/api_keys.py', reloading
+2024-12-18 11:52:05,629 - werkzeug - INFO -  * Restarting with stat
+2024-12-18 11:52:09,851 - root - INFO - Model loaded successfully
+2024-12-18 11:52:09,882 - werkzeug - WARNING -  * Debugger is active!
+2024-12-18 11:52:09,884 - werkzeug - INFO -  * Debugger PIN: 728-137-301
+2024-12-18 11:52:53,886 - werkzeug - INFO -  * Detected change in '/home/ajm2327/LSTM_Tool/auth/api_keys.py', reloading
+2024-12-18 11:52:54,527 - werkzeug - INFO -  * Restarting with stat
+2024-12-18 11:52:58,681 - root - INFO - Model loaded successfully
+2024-12-18 11:52:58,711 - werkzeug - WARNING -  * Debugger is active!
+2024-12-18 11:52:58,713 - werkzeug - INFO -  * Debugger PIN: 728-137-301
+2024-12-18 11:53:14,133 - werkzeug - INFO -  * Detected change in '/home/ajm2327/LSTM_Tool/auth/api_keys.py', reloading
+2024-12-18 11:53:14,905 - werkzeug - INFO -  * Restarting with stat
+2024-12-18 11:53:18,859 - root - INFO - Model loaded successfully
+2024-12-18 11:53:18,887 - werkzeug - WARNING -  * Debugger is active!
+2024-12-18 11:53:18,890 - werkzeug - INFO -  * Debugger PIN: 728-137-301
+2024-12-18 11:53:25,002 - werkzeug - INFO -  * Detected change in '/home/ajm2327/LSTM_Tool/auth/api_keys.py', reloading
+2024-12-18 11:53:25,664 - werkzeug - INFO -  * Restarting with stat
+2024-12-18 11:53:29,559 - root - INFO - Model loaded successfully
+2024-12-18 11:53:29,589 - werkzeug - WARNING -  * Debugger is active!
+2024-12-18 11:53:29,592 - werkzeug - INFO -  * Debugger PIN: 728-137-301
+2024-12-18 11:53:58,263 - werkzeug - INFO -  * Detected change in '/home/ajm2327/LSTM_Tool/auth/api_keys.py', reloading
+2024-12-18 11:53:58,948 - werkzeug - INFO -  * Restarting with stat
+2024-12-18 11:54:03,005 - root - INFO - Model loaded successfully
+2024-12-18 11:54:03,034 - werkzeug - WARNING -  * Debugger is active!
+2024-12-18 11:54:03,037 - werkzeug - INFO -  * Debugger PIN: 728-137-301
+2024-12-18 11:54:16,398 - werkzeug - INFO -  * Detected change in '/home/ajm2327/LSTM_Tool/auth/api_keys.py', reloading
+2024-12-18 11:54:17,075 - werkzeug - INFO -  * Restarting with stat
+2024-12-18 11:54:20,991 - root - INFO - Model loaded successfully
+2024-12-18 11:54:21,020 - werkzeug - WARNING -  * Debugger is active!
+2024-12-18 11:54:21,022 - werkzeug - INFO -  * Debugger PIN: 728-137-301
+2024-12-18 11:56:06,386 - werkzeug - INFO -  * Detected change in '/home/ajm2327/LSTM_Tool/auth/middleware.py', reloading
+2024-12-18 11:56:07,037 - werkzeug - INFO -  * Restarting with stat
+2024-12-18 11:56:11,445 - root - INFO - Model loaded successfully
+2024-12-18 11:56:11,470 - werkzeug - WARNING -  * Debugger is active!
+2024-12-18 11:56:11,472 - werkzeug - INFO -  * Debugger PIN: 728-137-301
+2024-12-18 11:57:05,725 - werkzeug - INFO -  * Detected change in '/home/ajm2327/LSTM_Tool/auth/middleware.py', reloading
+2024-12-18 11:57:06,414 - werkzeug - INFO -  * Restarting with stat
+2024-12-18 11:57:09,885 - root - INFO - Model loaded successfully
+2024-12-18 11:57:09,911 - werkzeug - WARNING -  * Debugger is active!
+2024-12-18 11:57:09,913 - werkzeug - INFO -  * Debugger PIN: 728-137-301
+2024-12-18 11:57:25,302 - werkzeug - INFO -  * Detected change in '/home/ajm2327/LSTM_Tool/auth/middleware.py', reloading
+2024-12-18 11:57:26,019 - werkzeug - INFO -  * Restarting with stat
+2024-12-18 11:57:29,820 - root - INFO - Model loaded successfully
+2024-12-18 11:58:28,224 - root - INFO - Model loaded successfully
+2024-12-18 11:58:28,255 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-18 11:58:28,255 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-12-18 11:58:28,256 - werkzeug - INFO -  * Restarting with stat
+2024-12-18 11:58:31,989 - root - INFO - Model loaded successfully
+2024-12-18 11:58:32,016 - werkzeug - WARNING -  * Debugger is active!
+2024-12-18 11:58:32,018 - werkzeug - INFO -  * Debugger PIN: 728-137-301
+2024-12-18 11:58:54,838 - auth - ERROR - Error creating API key: (psycopg2.errors.UndefinedTable) relation "api_keys" does not exist
+LINE 2:             SELECT COUNT(*) FROM api_keys
+                                         ^
+
+[SQL: 
+            SELECT COUNT(*) FROM api_keys
+            WHERE user_id = %(user_id)s AND is_active = true
+        ]
+[parameters: {'user_id': UUID('e212b150-c962-45fe-aaa5-83f49c64fd87')}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2024-12-18 11:58:54,839 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 11:58:54] "[35m[1mPOST /api/keys/create HTTP/1.1[0m" 500 -
+2024-12-18 12:03:59,756 - root - INFO - Model loaded successfully
+2024-12-18 12:03:59,789 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-18 12:03:59,789 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-12-18 12:03:59,791 - werkzeug - INFO -  * Restarting with stat
+2024-12-18 12:04:03,435 - root - INFO - Model loaded successfully
+2024-12-18 12:04:03,465 - werkzeug - WARNING -  * Debugger is active!
+2024-12-18 12:04:03,467 - werkzeug - INFO -  * Debugger PIN: 728-137-301
+2024-12-18 12:04:11,297 - auth - ERROR - Error creating API key: type object 'datetime.datetime' has no attribute 'timezone'
+2024-12-18 12:04:11,299 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:04:11] "[35m[1mPOST /api/keys/create HTTP/1.1[0m" 500 -
+2024-12-18 12:07:25,119 - werkzeug - INFO -  * Detected change in '/home/ajm2327/LSTM_Tool/auth/api_keys.py', reloading
+2024-12-18 12:07:25,782 - werkzeug - INFO -  * Restarting with stat
+2024-12-18 12:07:29,522 - root - INFO - Model loaded successfully
+2024-12-18 12:07:29,552 - werkzeug - WARNING -  * Debugger is active!
+2024-12-18 12:07:29,554 - werkzeug - INFO -  * Debugger PIN: 728-137-301
+2024-12-18 12:08:08,448 - werkzeug - INFO -  * Detected change in '/home/ajm2327/LSTM_Tool/auth/api_keys.py', reloading
+2024-12-18 12:08:09,149 - werkzeug - INFO -  * Restarting with stat
+2024-12-18 12:08:13,889 - root - INFO - Model loaded successfully
+2024-12-18 12:08:13,921 - werkzeug - WARNING -  * Debugger is active!
+2024-12-18 12:08:13,923 - werkzeug - INFO -  * Debugger PIN: 728-137-301
+2024-12-18 12:08:52,713 - werkzeug - INFO -  * Detected change in '/home/ajm2327/LSTM_Tool/auth/api_keys.py', reloading
+2024-12-18 12:08:53,405 - werkzeug - INFO -  * Restarting with stat
+2024-12-18 12:08:58,260 - root - INFO - Model loaded successfully
+2024-12-18 12:08:58,287 - werkzeug - WARNING -  * Debugger is active!
+2024-12-18 12:08:58,289 - werkzeug - INFO -  * Debugger PIN: 728-137-301
+2024-12-18 12:09:05,488 - werkzeug - INFO -  * Detected change in '/home/ajm2327/LSTM_Tool/auth/middleware.py', reloading
+2024-12-18 12:09:06,145 - werkzeug - INFO -  * Restarting with stat
+2024-12-18 12:09:10,200 - root - INFO - Model loaded successfully
+2024-12-18 12:09:10,226 - werkzeug - WARNING -  * Debugger is active!
+2024-12-18 12:09:10,229 - werkzeug - INFO -  * Debugger PIN: 728-137-301
+2024-12-18 12:09:11,317 - werkzeug - INFO -  * Detected change in '/home/ajm2327/LSTM_Tool/auth/middleware.py', reloading
+2024-12-18 12:09:12,053 - werkzeug - INFO -  * Restarting with stat
+2024-12-18 12:09:16,466 - root - INFO - Model loaded successfully
+2024-12-18 12:09:16,499 - werkzeug - WARNING -  * Debugger is active!
+2024-12-18 12:09:16,501 - werkzeug - INFO -  * Debugger PIN: 728-137-301
+2024-12-18 12:09:38,911 - werkzeug - INFO -  * Detected change in '/home/ajm2327/LSTM_Tool/auth/middleware.py', reloading
+2024-12-18 12:09:39,573 - werkzeug - INFO -  * Restarting with stat
+2024-12-18 12:09:43,763 - root - INFO - Model loaded successfully
+2024-12-18 12:09:43,792 - werkzeug - WARNING -  * Debugger is active!
+2024-12-18 12:09:43,794 - werkzeug - INFO -  * Debugger PIN: 728-137-301
+2024-12-18 12:10:09,411 - root - INFO - Model loaded successfully
+2024-12-18 12:10:09,441 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-18 12:10:09,442 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-12-18 12:10:09,442 - werkzeug - INFO -  * Restarting with stat
+2024-12-18 12:10:14,909 - root - INFO - Model loaded successfully
+2024-12-18 12:10:14,943 - werkzeug - WARNING -  * Debugger is active!
+2024-12-18 12:10:14,945 - werkzeug - INFO -  * Debugger PIN: 728-137-301
+2024-12-18 12:10:52,450 - auth - INFO - API key created for user e212b150-c962-45fe-aaa5-83f49c64fd87
+2024-12-18 12:10:52,452 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:10:52] "POST /api/keys/create HTTP/1.1" 200 -
+2024-12-18 12:12:51,894 - auth - ERROR - Error listing API keys: Textual SQL expression '\n            SELECT api_k...' should be explicitly declared as text('\n            SELECT api_k...')
+2024-12-18 12:12:51,897 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:12:51] "[35m[1mGET /api/keys/list HTTP/1.1[0m" 500 -
+2024-12-18 12:15:19,457 - werkzeug - INFO -  * Detected change in '/home/ajm2327/LSTM_Tool/auth/api_keys.py', reloading
+2024-12-18 12:15:20,204 - werkzeug - INFO -  * Restarting with stat
+2024-12-18 12:15:23,962 - root - INFO - Model loaded successfully
+2024-12-18 12:15:23,993 - werkzeug - WARNING -  * Debugger is active!
+2024-12-18 12:15:23,995 - werkzeug - INFO -  * Debugger PIN: 728-137-301
+2024-12-18 12:16:00,893 - werkzeug - INFO -  * Detected change in '/home/ajm2327/LSTM_Tool/auth/api_keys.py', reloading
+2024-12-18 12:16:01,531 - werkzeug - INFO -  * Restarting with stat
+2024-12-18 12:16:06,580 - root - INFO - Model loaded successfully
+2024-12-18 12:16:06,614 - werkzeug - WARNING -  * Debugger is active!
+2024-12-18 12:16:06,616 - werkzeug - INFO -  * Debugger PIN: 728-137-301
+2024-12-18 12:16:36,412 - werkzeug - INFO -  * Detected change in '/home/ajm2327/LSTM_Tool/auth/api_keys.py', reloading
+2024-12-18 12:16:37,063 - werkzeug - INFO -  * Restarting with stat
+2024-12-18 12:16:41,879 - root - INFO - Model loaded successfully
+2024-12-18 12:16:41,907 - werkzeug - WARNING -  * Debugger is active!
+2024-12-18 12:16:41,909 - werkzeug - INFO -  * Debugger PIN: 728-137-301
+2024-12-18 12:16:47,067 - werkzeug - INFO -  * Detected change in '/home/ajm2327/LSTM_Tool/auth/api_keys.py', reloading
+2024-12-18 12:16:47,802 - werkzeug - INFO -  * Restarting with stat
+2024-12-18 12:16:52,010 - root - INFO - Model loaded successfully
+2024-12-18 12:16:52,042 - werkzeug - WARNING -  * Debugger is active!
+2024-12-18 12:16:52,045 - werkzeug - INFO -  * Debugger PIN: 728-137-301
+2024-12-18 12:17:16,952 - root - INFO - Model loaded successfully
+2024-12-18 12:17:16,980 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-18 12:17:16,980 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-12-18 12:17:16,981 - werkzeug - INFO -  * Restarting with stat
+2024-12-18 12:17:20,578 - root - INFO - Model loaded successfully
+2024-12-18 12:17:20,606 - werkzeug - WARNING -  * Debugger is active!
+2024-12-18 12:17:20,608 - werkzeug - INFO -  * Debugger PIN: 728-137-301
+2024-12-18 12:17:25,921 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:17:25] "GET /api/keys/list HTTP/1.1" 200 -
+2024-12-18 12:19:27,866 - auth - ERROR - Error getting key status: sesion
+2024-12-18 12:19:27,868 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:19:27] "[35m[1mGET /api/keys/status/d823d4514df572f976f5d2158b4086503c3fd7bc47ccdd7da52f163e0c885a93 HTTP/1.1[0m" 500 -
+2024-12-18 12:20:20,586 - werkzeug - INFO -  * Detected change in '/home/ajm2327/LSTM_Tool/auth/middleware.py', reloading
+2024-12-18 12:20:21,361 - werkzeug - INFO -  * Restarting with stat
+2024-12-18 12:20:25,173 - root - INFO - Model loaded successfully
+2024-12-18 12:20:25,202 - werkzeug - WARNING -  * Debugger is active!
+2024-12-18 12:20:25,205 - werkzeug - INFO -  * Debugger PIN: 728-137-301
+2024-12-18 12:20:37,529 - root - INFO - Model loaded successfully
+2024-12-18 12:20:37,557 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-18 12:20:37,557 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-12-18 12:20:37,558 - werkzeug - INFO -  * Restarting with stat
+2024-12-18 12:20:41,275 - root - INFO - Model loaded successfully
+2024-12-18 12:20:41,303 - werkzeug - WARNING -  * Debugger is active!
+2024-12-18 12:20:41,305 - werkzeug - INFO -  * Debugger PIN: 728-137-301
+2024-12-18 12:20:49,586 - auth - ERROR - Error getting key status: (psycopg2.errors.FeatureNotSupported) input of anonymous composite types is not implemented
+LINE 4:             WHERE api_keys = 'd823d4514df572f976f5d2158b4086...
+                                     ^
+
+[SQL: 
+            SELECT created_at, last_used, is_active, expires_at
+            FROM api_keys
+            WHERE api_keys = %(api_key)s AND user_id = %(user_id)s
+        ]
+[parameters: {'api_key': 'd823d4514df572f976f5d2158b4086503c3fd7bc47ccdd7da52f163e0c885a93', 'user_id': UUID('e212b150-c962-45fe-aaa5-83f49c64fd87')}]
+(Background on this error at: https://sqlalche.me/e/20/tw8g)
+2024-12-18 12:20:49,589 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:20:49] "[35m[1mGET /api/keys/status/d823d4514df572f976f5d2158b4086503c3fd7bc47ccdd7da52f163e0c885a93 HTTP/1.1[0m" 500 -
+2024-12-18 12:29:48,580 - werkzeug - INFO -  * Detected change in '/home/ajm2327/LSTM_Tool/auth/api_keys.py', reloading
+2024-12-18 12:29:49,210 - werkzeug - INFO -  * Restarting with stat
+2024-12-18 12:29:52,820 - root - INFO - Model loaded successfully
+2024-12-18 12:29:52,849 - werkzeug - WARNING -  * Debugger is active!
+2024-12-18 12:29:52,852 - werkzeug - INFO -  * Debugger PIN: 728-137-301
+2024-12-18 12:30:28,809 - werkzeug - INFO -  * Detected change in '/home/ajm2327/LSTM_Tool/auth/api_keys.py', reloading
+2024-12-18 12:30:29,540 - werkzeug - INFO -  * Restarting with stat
+2024-12-18 12:30:39,724 - root - INFO - Model loaded successfully
+2024-12-18 12:30:39,753 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-18 12:30:39,753 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-12-18 12:30:39,753 - werkzeug - INFO -  * Restarting with stat
+2024-12-18 12:30:43,246 - root - INFO - Model loaded successfully
+2024-12-18 12:30:43,274 - werkzeug - WARNING -  * Debugger is active!
+2024-12-18 12:30:43,276 - werkzeug - INFO -  * Debugger PIN: 728-137-301
+2024-12-18 12:30:47,833 - auth - ERROR - Error getting key status: Error 111 connecting to localhost:6379. Connection refused.
+2024-12-18 12:30:47,835 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:30:47] "[35m[1mGET /api/keys/status/d823d4514df572f976f5d2158b4086503c3fd7bc47ccdd7da52f163e0c885a93 HTTP/1.1[0m" 500 -
+2024-12-18 12:31:45,838 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:31:45] "[31m[1mPOST /auth/register HTTP/1.1[0m" 400 -
+2024-12-18 12:31:53,486 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:31:53] "POST /auth/login HTTP/1.1" 200 -
+2024-12-18 12:32:05,662 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:32:05] "POST /auth/login HTTP/1.1" 200 -
+2024-12-18 12:32:50,757 - auth - INFO - API key created for user f5211361-f54e-4019-a807-34941c694cce
+2024-12-18 12:32:50,758 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:32:50] "POST /api/keys/create HTTP/1.1" 200 -
+2024-12-18 12:33:32,320 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:33:32] "GET /api/keys/list HTTP/1.1" 200 -
+2024-12-18 12:34:18,464 - auth - ERROR - Error getting key status: Error 111 connecting to localhost:6379. Connection refused.
+2024-12-18 12:34:18,465 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:34:18] "[35m[1mGET /api/keys/status/db5ea517cb5120df35128e747d5d20720f89239104c7bf4d26e9fb35eb26d577 HTTP/1.1[0m" 500 -
+2024-12-18 12:45:12,744 - root - INFO - Model loaded successfully
+2024-12-18 12:45:12,749 - flask_migrate - ERROR - Error: Directory migrations already exists and is not empty
+2024-12-18 12:47:39,610 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:47:39] "GET /api/keys/status/db5ea517cb5120df35128e747d5d20720f89239104c7bf4d26e9fb35eb26d577 HTTP/1.1" 200 -
+2024-12-18 12:49:06,646 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:06] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:06,967 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:06] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:07,304 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:07] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:07,820 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:07] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:08,194 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:08] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:08,533 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:08] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:09,040 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:09] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:09,400 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:09] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:09,867 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:09] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:10,182 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:10] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:10,526 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:10] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:10,877 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:10] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:11,198 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:11] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:11,571 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:11] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:11,902 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:11] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:12,222 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:12] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:12,596 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:12] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:12,932 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:12] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:13,253 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:13] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:13,654 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:13] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:13,982 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:13] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:14,322 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:14] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:14,652 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:14] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:15,050 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:15] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:15,498 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:15] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:15,875 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:15] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:16,306 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:16] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:16,637 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:16] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:16,985 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:16] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:17,386 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:17] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:17,731 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:17] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:18,154 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:18] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:18,602 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:18] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:18,929 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:18] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:19,262 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:19] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:19,590 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:19] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:19,941 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:19] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:20,394 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:20] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:20,874 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:20] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:21,197 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:21] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:21,560 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:21] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:21,969 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:21] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:22,354 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:22] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:22,694 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:22] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:23,034 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:23] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:24,607 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:24] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:24,943 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:24] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:25,328 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:25] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:25,648 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:25] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:25,983 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:25] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:26,417 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:26] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:26,818 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:26] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:27,205 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:27] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:27,532 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:27] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:27,878 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:27] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:28,336 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:28] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:28,666 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:28] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:29,009 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:29] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:29,348 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:29] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:29,688 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:29] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:30,095 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:30] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:30,440 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:30] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:30,763 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:30] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:31,131 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:31] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:31,468 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:31] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:31,790 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:31] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:32,167 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:32] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:32,495 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:32] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:32,836 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:32] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:33,298 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:33] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:33,629 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:33] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:33,976 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:33] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:34,317 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:34] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:34,714 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:34] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:36,602 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:36] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:36,988 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:36] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:37,319 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:37] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:37,671 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:37] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:38,068 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:38] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:38,397 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:38] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:38,745 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:38] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:39,076 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:39] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:39,427 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:39] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:39,822 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:39] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:40,153 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:40] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:40,502 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:40] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:40,938 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:40] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:41,283 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:41] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:41,750 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:41] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:42,073 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:42] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:42,408 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:42] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:42,817 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:42] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:43,144 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:43] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:43,461 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:43] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:43,916 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:43] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:44,246 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:44] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:44,675 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:44] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:45,019 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:45] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:45,345 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:45] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:45,711 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:45] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:46,040 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:46] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:46,361 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:46] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:46,736 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:46] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:47,094 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:47] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:47,541 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:47] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:47,889 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:47] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:48,310 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:48] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:48,718 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:48] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:49,050 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:49] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:49:49,390 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:49:49] "POST /predict HTTP/1.1" 200 -
+2024-12-18 12:51:01,228 - auth - INFO - API key revoked for user f5211361-f54e-4019-a807-34941c694cce
+2024-12-18 12:51:01,229 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:51:01] "POST /api/keys/revoke/db5ea517cb5120df35128e747d5d20720f89239104c7bf4d26e9fb35eb26d577 HTTP/1.1" 200 -
+2024-12-18 12:51:23,942 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:51:23] "[31m[1mPOST /predict HTTP/1.1[0m" 400 -
+2024-12-18 12:51:35,115 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:51:35] "[31m[1mPOST /predict HTTP/1.1[0m" 400 -
+2024-12-18 12:51:45,811 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:51:45] "[31m[1mPOST /predict HTTP/1.1[0m" 400 -
+2024-12-18 12:52:22,090 - auth - INFO - API key created for user f5211361-f54e-4019-a807-34941c694cce
+2024-12-18 12:52:22,092 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:52:22] "POST /api/keys/create HTTP/1.1" 200 -
+2024-12-18 12:52:22,108 - auth - INFO - API key created for user f5211361-f54e-4019-a807-34941c694cce
+2024-12-18 12:52:22,109 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:52:22] "POST /api/keys/create HTTP/1.1" 200 -
+2024-12-18 12:52:22,127 - auth - INFO - API key created for user f5211361-f54e-4019-a807-34941c694cce
+2024-12-18 12:52:22,128 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:52:22] "POST /api/keys/create HTTP/1.1" 200 -
+2024-12-18 12:52:22,149 - auth - INFO - API key created for user f5211361-f54e-4019-a807-34941c694cce
+2024-12-18 12:52:22,150 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:52:22] "POST /api/keys/create HTTP/1.1" 200 -
+2024-12-18 12:52:22,167 - auth - INFO - API key created for user f5211361-f54e-4019-a807-34941c694cce
+2024-12-18 12:52:22,169 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:52:22] "POST /api/keys/create HTTP/1.1" 200 -
+2024-12-18 12:52:22,182 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:52:22] "[31m[1mPOST /api/keys/create HTTP/1.1[0m" 400 -
+2024-12-18 12:52:42,181 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:52:42] "GET /logs?type=app&lines=100 HTTP/1.1" 200 -
+2024-12-18 12:52:51,983 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:52:51] "GET /logs?type=error&lines=100 HTTP/1.1" 200 -

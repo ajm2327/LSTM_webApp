@@ -4,11 +4,22 @@ from database.db import db
 from .middleware import APIKey, SecurityTracker, RateLimit
 from .config import AuthConfig
 import logging
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 import uuid
+from sqlalchemy import text
 
 logger = logging.getLogger('auth')
 api_keys = Blueprint('api_keys', __name__)
+
+@staticmethod
+def count_user_keys(user_id):
+    """Count active keys for a user"""
+
+    sql = text("""
+        SELECT COUNT(*) FROM api_keys
+        WHERE user_id = :user_id AND is_active = true
+    """)
+    return db.session.execute(sql, {'user_d': user_id}).scalar()
 
 @api_keys.route('/keys/create', methods=['POST'])
 @login_required
@@ -24,18 +35,20 @@ def create_key():
             }), 400
         
         new_key = APIKey.generate_key()
-        expires_at = datetime.now(datetime.timezone.utc) + timedelta(days = AuthConfig.KEY_EXPIRY_DAYS)
+        expires_at = datetime.now(timezone.utc) + timedelta(days = AuthConfig.KEY_EXPIRY_DAYS)
 
-        db.session.execute("""
-                           INSERT INTO api_keys (key_id, user_id, api_key, created_at, expires_at)
-                           VALUES (:key_id, :user_id, :api_key, :created_at, :expires_at)
-                           """, {
-                               'key_id': uuid.uuid4(),
-                               'user_id': current_user.user_id,
-                               'api_key': new_key,
-                               'created_at': datetime.now(datetime.timezone.utc)',
-                               'expires_at': expires_at
-                           })
+        sql = text("""
+            INSERT INTO api_keys (key_id, user_id, api_key, created_at, expires_at)
+            VALUES (:key_id, :user_id, :api_key, :created_at, :expires_at)
+        """)
+
+        db.session.execute(sql, {
+            'key_id': uuid.uuid4(),
+            'user_id': current_user.user_id,
+            'api_key': new_key,
+            'created_at': datetime.now(timezone.utc),
+            'expires_at': expires_at
+        })
         
         db.session.commit()
         logger.info(f"API key created for user {current_user.user_id}")
@@ -50,7 +63,7 @@ def create_key():
         })
     
     except Exception as e:
-        logger.error(f"Error creating API key: (str(e))")
+        logger.error(f"Error creating API key: {str(e)}")
         db.session.rollback()
         return jsonify({"error": "Failed to create API key"}), 500
     
@@ -59,12 +72,13 @@ def create_key():
 def list_keys():
     """List all api keys for the current user"""
     try:
-        keys = db.session.execute("""
-                                  SELECT api_key, created_at, last_used, is_active, expires_at
-                                  FROM api_keys
-                                  WHERE user_id = :user_id
-                                  ORDER BY created_at DESC
-                                  """, {'user_id': current_user.user_id}).fetchall()
+        sql = text("""
+            SELECT api_key, created_at, last_used, is_active, expires_at
+            FROM api_keys
+            WHERE user_id = :user_id
+            ORDER BY created_at DESC
+        """)
+        keys = db.session.execute(sql, {'user_id': current_user.user_id}).fetchall()
         
         return jsonify({
             "keys": [{
@@ -73,7 +87,7 @@ def list_keys():
                 "last_used": key.last_used.isoformat() if key.last_used else None,
                 "is_active": key.is_active,
                 "expires_at": key.expires_at.isoformat(),
-                "is_expired": key.expires_at < datetime.now(datetime.timezone.utc)
+                "is_expired": key.expires_at < datetime.now(timezone.utc)
             } for key in keys]
         })
     
@@ -86,12 +100,13 @@ def list_keys():
 def revoke_key(api_key):
     """Revoke an API key"""
     try:
-        result = db.session.execute("""
-                                    UPDATE api_keys
-                                    SET is_active = false
-                                    WHERE api_key = :api_key AND user_id = :user_id
-                                    RETURNING api_key
-                                    """, {'api_key': api_key, 'user_id': current_user.user_id})
+        sql = text("""
+            UPDATE api_keys
+            SET is_active = false
+            WHERE api_key = :api_key AND user_id = :user_id
+            RETURNING api_key
+        """)
+        result = db.session.execute(sql, {'api_key': api_key, 'user_id': current_user.user_id})
         if not result.rowcount:
             return jsonify({"error": "Key not found"}), 404
         
@@ -110,11 +125,12 @@ def revoke_key(api_key):
 def key_status(api_key):
     """Get detailed status of an API key"""
     try:
-        key_info = db.sesion.execute("""
-                                     SELECT created_at, last_used, is_active, expires_at
-                                     FROM api_keys
-                                     WHERE api_keys = :api_key AND user_id = :user_id
-                                     """, {'api_key': api_key, 'user_id': current_user.user_id}).first()
+        sql = text("""
+            SELECT created_at, last_used, is_active, expires_at
+            FROM api_keys
+            WHERE api_key = :api_key AND user_id = :user_id
+        """)
+        key_info = db.session.execute(sql, {'api_key': api_key, 'user_id': current_user.user_id}).first()
         
         if not key_info:
             return jsonify({"error": "Key not found"}), 404
@@ -128,7 +144,7 @@ def key_status(api_key):
                 "created_at": key_info.created_at.isoformat(),
                 "last_used": key_info.last_used.isofromat() if key_info.last_used else None,
                 "expires_at": key_info.expires_at.isoformat(),
-                "is_expired": key_info.expires_at < datetime.now(datetime.timezone.utc)
+                "is_expired": key_info.expires_at < datetime.now(timezone.utc)
             },
             "rate_limit": {
                 "remaining_requests": remaining_requests,

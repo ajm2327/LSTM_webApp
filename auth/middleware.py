@@ -3,13 +3,14 @@ from flask import request, jsonify, current_app
 from models.user import User
 from database.db import db
 import uuid
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 import hashlib
 import os
 import logging
 import json
 from redis import Redis
 from .config import AuthConfig
+from sqlalchemy import text
 
 logger = logging.getLogger('auth')
 
@@ -24,7 +25,7 @@ class APIKey:
         self.key_id = uuid.uuid4()
         self.user_id = user_id
         self.api_key = api_key
-        self.created_at = datetime.now(datetime.timezone.utc)
+        self.created_at = datetime.now(timezone.utc)
         self.last_used = None
         self.is_active = is_active
         self.expires_at = self.created_at + timedelta(days=AuthConfig.KEY_EXPIRY_DAYS)
@@ -53,10 +54,11 @@ class APIKey:
     @staticmethod
     def count_user_keys(user_id):
         """Count active keys for a user"""
-        return db.session.execute("""
-                                  SELECT COUNT(*) FROM api_keys
-                                  WHERE user_id = :user_id AND is_active = true
-                                  """, {'user_id': user_id}).scalar()
+        sql = text("""
+            SELECT COUNT(*) FROM api_keys
+            WHERE user_id = :user_id AND is_active = true
+        """)
+        return db.session.execute(sql, {'user_id': user_id}).scalar()
     
 class RateLimit:
     """Handles rate limiting logic"""
@@ -136,12 +138,13 @@ def require_api_key(f):
                 return jsonify({"error": "invalid API key format"}), 401
             
             #Check if API key exists and is active
-            key_record = db.session.execute("""
-                                            SELECT ak.user_id, ak.is_active, ak.created_at, u.is_active as user_active
-                                            FROM api_keys ak
-                                            JOIN users u ON ak.user_id = u.user_id
-                                            WHERE ak.api_key = :api_key
-                                            """, {'api_key': api_key}).first()
+            sql = text("""
+                SELECT ak.user_id, ak.is_active, ak.created_at, u.is_active as user_active
+                FROM api_keys ak
+                JOIN users u ON ak.user_id = u.user_id
+                WHERE ak.api_key = :api_key
+            """)
+            key_record = db.session.execute(sql, {'api_key': api_key}).first()
             if not key_record:
                 return jsonify({"error": "Invalid API Key"}), 401
             
@@ -149,14 +152,15 @@ def require_api_key(f):
                 return jsonify({"error": "Inactive API Key or user account"}), 401
             
             #check key expiration
-            if key_record.created_at + timedelta(days=AuthConfig.KEY_EXPIRY_DAYS) < datetime.now(datetime.timezone.utc):
+            if key_record.created_at + timedelta(days=AuthConfig.KEY_EXPIRY_DAYS) < datetime.now(timezone.utc):
                 return jsonify({"error": "Expired API key"}), 401
             
-            db.session.execute("""
-                               UPDATE api_keys
-                               SET last_used = :now
-                               WHERE api_key = :api_key
-                               """, {'now': datetime.now(datetime.timezone.utc), 'api_key': api_key})
+            sql = text("""
+                UPDATE api_keys
+                SET last_used = :now
+                WHERE api_key = :api_key
+            """)
+            db.session.execute(sql, {'now': datetime.now(timezone.utc), 'api_key': api_key})
             
             #Check rate liimit
             rate_limiter = RateLimit()

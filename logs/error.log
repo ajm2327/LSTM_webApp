@@ -19,3 +19,36 @@
 2024-12-04 16:40:18,133 - root - ERROR - Error loading model: Version models_saved/ not found
 2024-12-05 15:27:37,348 - flask_migrate - ERROR - Error: Directory migrations already exists and is not empty
 2024-12-05 15:34:07,781 - flask_migrate - ERROR - Error: Directory migrations already exists and is not empty
+2024-12-18 10:42:11,685 - auth - ERROR - Error creating API key: (str(e))
+2024-12-18 10:45:55,290 - auth - ERROR - Error creating API key: (str(e))
+2024-12-18 10:49:53,300 - auth - ERROR - Error creating API key: (str(e))
+2024-12-18 10:55:53,610 - auth - ERROR - Error creating API key: Textual SQL expression '\n                        ...' should be explicitly declared as text('\n                        ...')
+2024-12-18 11:04:10,546 - auth - ERROR - Error creating API key: Textual SQL expression '\n                        ...' should be explicitly declared as text('\n                        ...')
+2024-12-18 11:43:34,515 - auth - ERROR - Error creating API key: Textual SQL expression '\n                        ...' should be explicitly declared as text('\n                        ...')
+2024-12-18 11:58:54,838 - auth - ERROR - Error creating API key: (psycopg2.errors.UndefinedTable) relation "api_keys" does not exist
+LINE 2:             SELECT COUNT(*) FROM api_keys
+                                         ^
+
+[SQL: 
+            SELECT COUNT(*) FROM api_keys
+            WHERE user_id = %(user_id)s AND is_active = true
+        ]
+[parameters: {'user_id': UUID('e212b150-c962-45fe-aaa5-83f49c64fd87')}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2024-12-18 12:04:11,297 - auth - ERROR - Error creating API key: type object 'datetime.datetime' has no attribute 'timezone'
+2024-12-18 12:12:51,894 - auth - ERROR - Error listing API keys: Textual SQL expression '\n            SELECT api_k...' should be explicitly declared as text('\n            SELECT api_k...')
+2024-12-18 12:19:27,866 - auth - ERROR - Error getting key status: sesion
+2024-12-18 12:20:49,586 - auth - ERROR - Error getting key status: (psycopg2.errors.FeatureNotSupported) input of anonymous composite types is not implemented
+LINE 4:             WHERE api_keys = 'd823d4514df572f976f5d2158b4086...
+                                     ^
+
+[SQL: 
+            SELECT created_at, last_used, is_active, expires_at
+            FROM api_keys
+            WHERE api_keys = %(api_key)s AND user_id = %(user_id)s
+        ]
+[parameters: {'api_key': 'd823d4514df572f976f5d2158b4086503c3fd7bc47ccdd7da52f163e0c885a93', 'user_id': UUID('e212b150-c962-45fe-aaa5-83f49c64fd87')}]
+(Background on this error at: https://sqlalche.me/e/20/tw8g)
+2024-12-18 12:30:47,833 - auth - ERROR - Error getting key status: Error 111 connecting to localhost:6379. Connection refused.
+2024-12-18 12:34:18,464 - auth - ERROR - Error getting key status: Error 111 connecting to localhost:6379. Connection refused.
+2024-12-18 12:45:12,749 - flask_migrate - ERROR - Error: Directory migrations already exists and is not empty

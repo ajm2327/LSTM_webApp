@@ -13,7 +13,7 @@ class AuthConfig:
     MIN_KEY_LENGTH = 64
 
     #Rate limiting
-    RATE_LIMIT_REQUESTS = int(os.geten('RATE_LIMIT_REQUESTS', '100'))
+    RATE_LIMIT_REQUESTS = int(os.getenv('RATE_LIMIT_REQUESTS', '100'))
     RATE_LIMIT_WINDOW = int(os.getenv('RATE_LIMIT_WINDOW', '3600')) # 1 hour 
     RATE_LIMIT_CLEANUP_INTERVAL = timedelta(hours=1)
 
