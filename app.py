@@ -14,6 +14,8 @@ import json
 from auth.routes import auth, login_manager
 from auth.api_keys import api_keys
 from dotenv import load_dotenv
+from background_tasks import init_background_tasks
+
 
 load_dotenv()
 
@@ -39,6 +41,10 @@ login_manager.login_view = 'auth.login'
 predictor = StockPredictor()
 app.register_blueprint(auth, url_prefix='/auth')
 app.register_blueprint(api_keys, url_prefix='/api')
+
+#initialize background tasks
+background_tasks = init_background_tasks(app)
+
 
 
 @login_manager.user_loader
