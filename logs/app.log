@@ -683,3 +683,131 @@ LINE 4:             WHERE api_keys = 'd823d4514df572f976f5d2158b4086...
 2024-12-18 12:52:22,182 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:52:22] "[31m[1mPOST /api/keys/create HTTP/1.1[0m" 400 -
 2024-12-18 12:52:42,181 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:52:42] "GET /logs?type=app&lines=100 HTTP/1.1" 200 -
 2024-12-18 12:52:51,983 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2024 12:52:51] "GET /logs?type=error&lines=100 HTTP/1.1" 200 -
+2025-01-10 10:34:34,022 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 10:34:34,024 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 10:34:34,024 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 10:34:34,026 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.retrain_model" to job store "default"
+2025-01-10 10:34:34,026 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.update_market_data" to job store "default"
+2025-01-10 10:34:34,026 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.manage_cache" to job store "default"
+2025-01-10 10:34:34,026 - apscheduler.scheduler - INFO - Scheduler started
+2025-01-10 10:34:34,256 - root - INFO - Model loaded successfully
+2025-01-10 10:34:34,356 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-10 10:34:34,357 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-01-10 10:34:34,358 - werkzeug - INFO -  * Restarting with stat
+2025-01-10 10:34:37,795 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 10:34:37,796 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 10:34:37,796 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 10:34:37,798 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.retrain_model" to job store "default"
+2025-01-10 10:34:37,798 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.update_market_data" to job store "default"
+2025-01-10 10:34:37,798 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.manage_cache" to job store "default"
+2025-01-10 10:34:37,798 - apscheduler.scheduler - INFO - Scheduler started
+2025-01-10 10:34:37,983 - root - INFO - Model loaded successfully
+2025-01-10 10:34:38,011 - werkzeug - WARNING -  * Debugger is active!
+2025-01-10 10:34:38,023 - werkzeug - INFO -  * Debugger PIN: 203-648-885
+2025-01-10 10:34:44,483 - werkzeug - INFO - 127.0.0.1 - - [10/Jan/2025 10:34:44] "GET / HTTP/1.1" 200 -
+2025-01-10 10:35:08,760 - werkzeug - INFO - 127.0.0.1 - - [10/Jan/2025 10:35:08] "[31m[1mPOST /auth/register HTTP/1.1[0m" 400 -
+2025-01-10 10:35:22,526 - root - ERROR - Prediction error: Found array with 0 sample(s) (shape=(0, 16)) while a minimum of 1 is required by MinMaxScaler.
+2025-01-10 10:35:22,527 - werkzeug - INFO - 127.0.0.1 - - [10/Jan/2025 10:35:22] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -
+2025-01-10 10:40:00,765 - werkzeug - INFO - 127.0.0.1 - - [10/Jan/2025 10:40:00] "POST /train HTTP/1.1" 200 -
+2025-01-10 10:46:44,236 - root - ERROR - Prediction error: Found array with 0 sample(s) (shape=(0, 16)) while a minimum of 1 is required by MinMaxScaler.
+2025-01-10 10:46:44,237 - werkzeug - INFO - 127.0.0.1 - - [10/Jan/2025 10:46:44] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -
+2025-01-10 11:02:44,373 - werkzeug - INFO - 127.0.0.1 - - [10/Jan/2025 11:02:44] "POST /train HTTP/1.1" 200 -
+2025-01-10 11:02:59,839 - root - ERROR - Prediction error: destination: axis 2 is out of bounds for array of dimension 2
+2025-01-10 11:02:59,841 - werkzeug - INFO - 127.0.0.1 - - [10/Jan/2025 11:02:59] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -
+2025-01-10 11:05:39,289 - werkzeug - INFO - 127.0.0.1 - - [10/Jan/2025 11:05:39] "GET / HTTP/1.1" 200 -
+2025-01-10 11:06:05,745 - werkzeug - INFO - 127.0.0.1 - - [10/Jan/2025 11:06:05] "GET /health HTTP/1.1" 200 -
+2025-01-10 11:06:12,218 - werkzeug - INFO - 127.0.0.1 - - [10/Jan/2025 11:06:12] "GET /models HTTP/1.1" 200 -
+2025-01-10 11:06:23,227 - werkzeug - INFO - 127.0.0.1 - - [10/Jan/2025 11:06:23] "GET /models/1.0.0 HTTP/1.1" 200 -
+2025-01-10 11:06:33,138 - werkzeug - INFO - 127.0.0.1 - - [10/Jan/2025 11:06:33] "POST /predict HTTP/1.1" 200 -
+2025-01-10 11:07:53,106 - werkzeug - INFO - 127.0.0.1 - - [10/Jan/2025 11:07:53] "POST /train HTTP/1.1" 200 -
+2025-01-10 11:07:59,448 - werkzeug - INFO - 127.0.0.1 - - [10/Jan/2025 11:07:59] "GET /logs?type=app&lines=100 HTTP/1.1" 200 -
+2025-01-10 11:08:05,143 - werkzeug - INFO - 127.0.0.1 - - [10/Jan/2025 11:08:05] "GET /logs?type=error&lines=100 HTTP/1.1" 200 -
+2025-01-10 11:11:45,870 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 11:11:45,870 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 11:11:45,871 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 11:11:45,872 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.retrain_model" to job store "default"
+2025-01-10 11:11:45,872 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.update_market_data" to job store "default"
+2025-01-10 11:11:45,872 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.manage_cache" to job store "default"
+2025-01-10 11:11:45,873 - apscheduler.scheduler - INFO - Scheduler started
+2025-01-10 11:11:46,065 - root - INFO - Model loaded successfully
+2025-01-10 11:12:48,141 - werkzeug - INFO - 127.0.0.1 - - [10/Jan/2025 11:12:48] "[31m[1mPOST /auth/register HTTP/1.1[0m" 400 -
+2025-01-10 11:12:54,086 - werkzeug - INFO - 127.0.0.1 - - [10/Jan/2025 11:12:54] "POST /auth/login HTTP/1.1" 200 -
+2025-01-10 11:36:44,940 - werkzeug - INFO - 127.0.0.1 - - [10/Jan/2025 11:36:44] "POST /train HTTP/1.1" 200 -
+2025-01-10 11:44:09,313 - werkzeug - INFO -  * Detected change in '/home/ajm2327/LSTM_Tool/background/tasks.py', reloading
+2025-01-10 11:44:10,339 - werkzeug - INFO -  * Restarting with stat
+2025-01-10 11:44:17,231 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 11:44:17,231 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 11:44:17,232 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 11:44:17,234 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.retrain_model" to job store "default"
+2025-01-10 11:44:17,234 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.update_market_data" to job store "default"
+2025-01-10 11:44:17,234 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.manage_cache" to job store "default"
+2025-01-10 11:44:17,234 - apscheduler.scheduler - INFO - Scheduler started
+2025-01-10 11:44:17,453 - root - INFO - Model loaded successfully
+2025-01-10 11:44:17,504 - werkzeug - WARNING -  * Debugger is active!
+2025-01-10 11:44:17,517 - werkzeug - INFO -  * Debugger PIN: 203-648-885
+2025-01-10 11:44:56,865 - werkzeug - INFO -  * Detected change in '/home/ajm2327/LSTM_Tool/background/tasks.py', reloading
+2025-01-10 11:44:57,577 - werkzeug - INFO -  * Restarting with stat
+2025-01-10 11:45:01,730 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 11:45:01,730 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 11:45:01,730 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 11:45:01,731 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.retrain_model" to job store "default"
+2025-01-10 11:45:01,731 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.update_market_data" to job store "default"
+2025-01-10 11:45:01,732 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.manage_cache" to job store "default"
+2025-01-10 11:45:01,732 - apscheduler.scheduler - INFO - Scheduler started
+2025-01-10 11:45:01,949 - root - INFO - Model loaded successfully
+2025-01-10 11:45:01,979 - werkzeug - WARNING -  * Debugger is active!
+2025-01-10 11:45:01,981 - werkzeug - INFO -  * Debugger PIN: 203-648-885
+2025-01-10 12:03:04,813 - werkzeug - INFO -  * Detected change in '/home/ajm2327/LSTM_Tool/app.py', reloading
+2025-01-10 12:03:05,641 - werkzeug - INFO -  * Restarting with stat
+2025-01-10 12:03:15,615 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 12:03:15,616 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 12:03:15,616 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 12:03:15,617 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.retrain_model" to job store "default"
+2025-01-10 12:03:15,618 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.update_market_data" to job store "default"
+2025-01-10 12:03:15,618 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.manage_cache" to job store "default"
+2025-01-10 12:03:15,618 - apscheduler.scheduler - INFO - Scheduler started
+2025-01-10 12:03:15,836 - root - INFO - Model loaded successfully
+2025-01-10 12:56:59,338 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 12:56:59,340 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 12:56:59,340 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 12:56:59,342 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.retrain_model" to job store "default"
+2025-01-10 12:56:59,343 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.update_market_data" to job store "default"
+2025-01-10 12:56:59,343 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.manage_cache" to job store "default"
+2025-01-10 12:56:59,343 - apscheduler.scheduler - INFO - Scheduler started
+2025-01-10 12:56:59,621 - root - INFO - Model loaded successfully
+2025-01-10 12:58:37,531 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 12:58:37,531 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 12:58:37,531 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 12:58:37,532 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.retrain_model" to job store "default"
+2025-01-10 12:58:37,532 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.update_market_data" to job store "default"
+2025-01-10 12:58:37,533 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.manage_cache" to job store "default"
+2025-01-10 12:58:37,533 - apscheduler.scheduler - INFO - Scheduler started
+2025-01-10 12:58:37,738 - root - INFO - Model loaded successfully
+2025-01-10 12:58:37,823 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-10 12:58:37,824 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-01-10 12:58:37,825 - werkzeug - INFO -  * Restarting with stat
+2025-01-10 12:58:41,217 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 12:58:41,217 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 12:58:41,218 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 12:58:41,219 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.retrain_model" to job store "default"
+2025-01-10 12:58:41,219 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.update_market_data" to job store "default"
+2025-01-10 12:58:41,219 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.manage_cache" to job store "default"
+2025-01-10 12:58:41,219 - apscheduler.scheduler - INFO - Scheduler started
+2025-01-10 12:58:41,435 - root - INFO - Model loaded successfully
+2025-01-10 12:58:41,464 - werkzeug - WARNING -  * Debugger is active!
+2025-01-10 12:58:41,481 - werkzeug - INFO -  * Debugger PIN: 203-648-885
+2025-01-10 12:58:56,223 - werkzeug - INFO - 127.0.0.1 - - [10/Jan/2025 12:58:56] "[35m[1mGET /health/check HTTP/1.1[0m" 500 -
+2025-01-10 12:59:33,505 - werkzeug - INFO - 127.0.0.1 - - [10/Jan/2025 12:59:33] "GET /health HTTP/1.1" 200 -
+2025-01-10 13:00:04,832 - apscheduler.executors.default - WARNING - Run time of job "BackgroundTaskManager.update_market_data (trigger: cron[hour='9-16/4', minute='0'], next run at: 2025-01-10 13:00:00 MST)" was missed by 0:00:04.832045
+2025-01-10 13:00:04,832 - apscheduler.executors.default - WARNING - Run time of job "BackgroundTaskManager.update_market_data (trigger: cron[hour='9-16/4', minute='0'], next run at: 2025-01-10 13:00:00 MST)" was missed by 0:00:04.832071
+2025-01-10 13:00:37,560 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 13:00:37,561 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 13:00:37,561 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 13:00:37,562 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.retrain_model" to job store "default"
+2025-01-10 13:00:37,562 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.update_market_data" to job store "default"
+2025-01-10 13:00:37,563 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.manage_cache" to job store "default"
+2025-01-10 13:00:37,563 - apscheduler.scheduler - INFO - Scheduler started
+2025-01-10 13:00:37,763 - root - INFO - Model loaded successfully
+2025-01-10 13:01:11,941 - werkzeug - INFO - 127.0.0.1 - - [10/Jan/2025 13:01:11] "[35m[1mGET /health/check HTTP/1.1[0m" 500 -

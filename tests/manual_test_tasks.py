@@ -16,6 +16,7 @@ print("Project root:", project_root)
 
 try:
     from background.tasks import BackgroundTaskManager
+    from database.db import db, migrate
     print("Import 1 successful")
 except ImportError as e:
     print("Import 1 failed:", str(e))
@@ -30,6 +31,14 @@ logger = logging.getLogger(__name__)
 def create_test_app():
     app = Flask(__name__)
     app.config['TESTING'] = True
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///:memory:'
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+    db.init_app(app)
+    migrate.init_app(app, db)
+
+    #initialize redis mock
+    app.config['REDIS_URL'] = 'redis://localhost:6379/1'
     return app
 
 def test_background_tasks():

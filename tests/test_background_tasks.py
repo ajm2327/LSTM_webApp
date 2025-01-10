@@ -9,14 +9,21 @@ from models.lstm_model import StockPredictor
 from flask import Flask
 import yfinance as yf
 import threading
+from database.db import db, migrate
 
 class TestBackgroundTasks:
     @pytest.fixture
     def app(self):
         """Create test Flask app"""
         app = Flask(__name__)
-        app.config('TESTING') = True
-        app.config['SQL_ALCHEMY_DATABASE_URI'] = 'sqlite:///:memory:'
+        app.config['TESTING'] = True
+        app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///:memory:'
+        app.config['SQLAlCHEMY_TRACK_MODIFICATIONS'] = False
+
+        with app.app_context():
+            db.init_app(app)
+            migrate.init_app(app, db)
+            db.create_all()
         return app
     
     @pytest.fixture
@@ -24,10 +31,11 @@ class TestBackgroundTasks:
         """Create test background task manager instance"""
         with app.app_context():
             manager = BackgroundTaskManager(app)
+            manager.redis = Mock(spec=redis.Redis)
             yield manager
             #Cleanup
             manager.scheduler.shutdown()
-            manager.redis.flushall()
+            #manager.redis.flushall()
 
     def test_scheduler_initialization(self, task_manager):
         """Test if scheduler is properly initialized"""
@@ -46,17 +54,21 @@ class TestBackgroundTasks:
         #mock training results
         mock_train.return_value = (Mock(), Mock(), Mock(), Mock())
 
-        with app.app_context():
-            #Execute retraining
-            task_manager.retraining_model()
+        #mock database query
+        with patch('sqlalchemy.orm.session.Session.execute') as mock_execute:
+            mock_execute.return_value.fetchall.return_value = [('SPY', 100)]
 
-            #Verify training was called
-            assert mock_train.called
+            with app.app_context():
+                #Execute retraining
+                task_manager.retrain_model()
 
-            #Check if status was updated in Redis
-            status = task_manager.redis.get('task:model_retraining:status')
-            assert status is not None
-            assert status.decode('utf-8') == 'completed'
+                #Verify training was called
+                assert mock_train.called
+
+                #Check if status was updated in Redis
+                status = task_manager.redis.get('task:model_retraining:status')
+                assert status is not None
+                assert status.decode('utf-8') == 'completed'
 
     @patch.object(yf, 'download')
     def test_market_data_update(self, mock_download, task_manager, app):

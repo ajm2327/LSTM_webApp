@@ -7,14 +7,15 @@ from utils.logger_config import setup_logging
 from database.db import db, migrate
 from models.user import User
 import logging
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
+from sqlalchemy import text
 import yfinance as yf
 import os
 import json
 from auth.routes import auth, login_manager
 from auth.api_keys import api_keys
 from dotenv import load_dotenv
-from background_tasks import init_background_tasks
+from background.tasks import init_background_tasks
 
 
 load_dotenv()
@@ -236,8 +237,90 @@ def train():
         return jsonify({'error': f'Training failed: {str(e)}'}), 500
     
 @app.route('/health', methods=['GET'])
-def health_check():
+def health_status():
     return jsonify({'status': 'healthy'}), 200
+
+@app.route('/health/check', methods=['GET'])
+def health_check():
+    health_status = {
+        'status': 'healthy',
+        'timestamp': datetime.now(timezone.utc).isoformat(),
+        'components': {}
+    }
+
+    #Check database
+    try:
+        #test query
+        test_query = text('SELECT 1')
+        db.session.execute(test_query)
+        db.session.commit()
+        health_status['components']['database'] = {
+            'status': 'healthy',
+            'message': 'Database connection successful'
+        }
+    except Exception as e:
+        health_status['components']['database'] = {
+            'status': 'error',
+            'message': str(e)
+        }
+        health_status['status'] = 'unhealthy'
+
+    #check redis
+    try:
+        test_key = 'health_check_test'
+        app.redis_client.set(test_key, 'test_value', ex=60) #60 second expiry
+        test_value = app.redis_client.get(test_key)
+        if test_value != b'test_value':
+            raise Exception('Redis value mismatch')
+        health_status['components']['redis'] = {
+            'status': 'healthy',
+            'message': 'Redis connection successful'
+        }
+    except Exception as e:
+        health_status['components']['redis'] = {
+            'status': 'error',
+            'message': str(e)
+        }
+        health_status['status'] = 'unhealthy'
+
+    #Check backgroudn Tasks
+    try:
+        jobs = app.task_manager.scheduler.get_jobs()
+        job_status = {}
+        for job in jobs:
+            job_status[job.id] = {
+                'next_run': job.next_run_time.isoformat() if job.next_run_time else None,
+                'last_run': getattr(job, 'last_run_time', None),
+                'status': 'scheduled' if job.next_run_time else 'paused'
+            }
+        health_status['components']['background_tasks'] = {
+            'status': 'healthy',
+            'jobs': job_status
+        }
+    except Exception as e:
+        health_status['components']['background_tasks'] = {
+            'status': 'error',
+            'message': str(e)
+        }
+        health_status['status'] = 'unhealthy'
+
+    #check model availability
+    try:
+        models_path = 'models_saved/'
+        available_models = [d for d in os.listdir(models_path) if os.path.isdir(os.path.join(models_path, d))]
+        health_status['components']['models'] = {
+            'status': 'healthy',
+            'available_models': available_models
+        }
+    except Exception as e:
+        health_status['components']['models'] = {
+            'status': 'error',
+            'message': str(e)
+        }
+        health_status['status'] = 'unhealthy'
+    response = jsonify(health_status)
+    response.status_code = 200 if health_status['status'] == 'healthy' else 500
+    return response
 
 
 @app.route('/metrics', methods=['GET'])

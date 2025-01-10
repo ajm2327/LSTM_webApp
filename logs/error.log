@@ -52,3 +52,6 @@ LINE 4:             WHERE api_keys = 'd823d4514df572f976f5d2158b4086...
 2024-12-18 12:30:47,833 - auth - ERROR - Error getting key status: Error 111 connecting to localhost:6379. Connection refused.
 2024-12-18 12:34:18,464 - auth - ERROR - Error getting key status: Error 111 connecting to localhost:6379. Connection refused.
 2024-12-18 12:45:12,749 - flask_migrate - ERROR - Error: Directory migrations already exists and is not empty
+2025-01-10 10:35:22,526 - root - ERROR - Prediction error: Found array with 0 sample(s) (shape=(0, 16)) while a minimum of 1 is required by MinMaxScaler.
+2025-01-10 10:46:44,236 - root - ERROR - Prediction error: Found array with 0 sample(s) (shape=(0, 16)) while a minimum of 1 is required by MinMaxScaler.
+2025-01-10 11:02:59,839 - root - ERROR - Prediction error: destination: axis 2 is out of bounds for array of dimension 2

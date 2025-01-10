@@ -22,9 +22,35 @@ class BackgroundTaskManager:
         self.scheduler = BackgroundScheduler()
         self.predictor = StockPredictor()
         self.redis = Redis.from_url(os.getenv('REDIS_URL', 'redis://localhost:6379/0'))
+        self.max_requests = int(os.getenv('RATE_LIMIT_REQUESTS', '100'))
+        self.window_size = int(os.getenv('RATE_LIMIT_WINDOW', '3600'))
         if app:
             self.init_app(app)
 
+    def set_task_status(self, task_name, status, error=None):
+        """Helper to set task status in Redis"""
+        self.redis.set(f'task:{task_name}:status', status)
+        if error:
+            self.redis.set(f'task:{task_name}:status', status)
+
+    def get_recent_tickers(self, days=7):
+        """Database-agnostic way to get recent tickers"""
+        try:
+            with self.app.app_context():
+                #SQLite-compatible date query
+                sql = text("""
+                    SELECT ticker, COUNT(*) as request_count
+                    FROM predictions
+                    WHERE predictions_date >= datetime('now', ?)
+                    GROUP BY ticker
+                    ORDER BY request_count DESC
+                    LIMIT 5
+                """)
+                return db.session.execute(sql, [f'-{days} days']).fetchall()
+        except Exception as e:
+            self.set_task_status('model_retraining', 'error', str(e))
+            raise
+    
     def init_app(self, app):
         """Initialize with flask app context"""
         self.app = app
@@ -57,6 +83,7 @@ class BackgroundTaskManager:
     def retrain_model(self):
         """Periodic model retraining"""
         try:
+            logger.info(f"Starting model retraining task at {datetime.now(timezone.utc)}")         
             with self.app.app_context():
                 #get list of most requested tickers
                 sql = text("""
@@ -100,6 +127,7 @@ class BackgroundTaskManager:
                         logger.info(f"Successfully retraining model for {ticker}")
                     except Exception as e:
                         logger.error(f"Error retraining model for {ticker}: {str(e)}")
+            logger.info(f"Completed model retraining task at {datetime.now(timezone.utc)}") 
 
         except Exception as e:
             logger.error(f"Model retraining job faied: {str(e)}")
@@ -107,6 +135,7 @@ class BackgroundTaskManager:
     def update_market_data(self):
         """update market data in database"""
         try:
+            logger.info(f"Starting market data update task at {datetime.now(timezone.utc)}")         
             with self.app.app_context():
                 #get active tickers from database
                 sql = text("""
@@ -151,6 +180,8 @@ class BackgroundTaskManager:
                     except Exception as e:
                         logger.error(f"Error updating data for {ticker}: {str(e)}")
                         db.session.rollback()
+            logger.info(f"Completed market data update task at {datetime.now(timezone.utc)}")
+
 
         except Exception as e:
             logger.error(f"Market data update job failed: {str(e)}")
@@ -158,6 +189,7 @@ class BackgroundTaskManager:
     def manage_cache(self):
         """Manage cache data"""
         try:
+            logger.info(f"Starting cache management task at {datetime.now(timezone.utc)}") 
             with self.app.app_context():
                 #clean up old predictions
                 sql = text("""
@@ -185,10 +217,47 @@ class BackgroundTaskManager:
 
                 db.session.commit()
                 logger.info("Cache cleanup completed succcessfully")
+            logger.info(f"Completed cache management task at {datetime.now(timezone.utc)}")
 
         except Exception as e:
             logger.error(f"Cache management job failed: {str(e)}")
             db.session.rollback()
+    
+    def get_task_metrics(self):
+        """Get metrics for background tasks"""
+        metrics = {
+            'tasks': {},
+            'overall_health': 'healthy'
+        }
+        try:
+            #get all jobs
+            jobs = self.scheduler.get_jobs()
+
+            for job in jobs:
+                job_id = job.id
+                #get task execution history from redis
+                execution_key = f"task_execution:{job_id}"
+                execution_history = self.redis.lrange(execution_key, 0, -1)
+
+                #calculate success rate
+                total_runs = len(execution_history)
+                if total_runs > 0:
+                    successes = sum(1 for result in execution_history if b'success' in result)
+                    success_rate = (successes / total_runs) * 100
+                else:
+                    success_rate = None
+
+                metrics['tasks'][job_id] = {
+                    'last_run': job.next_run_time.isoformat() if job.next_run_time else None,
+                    'next_run': job.next_run_time.isoformat() if job.next_run_time else None,
+                    'total_runs': total_runs,
+                    'success_rate': success_rate,
+                    'status': 'active' if job.next_run_time else 'paused'
+                }
+            return metrics
+        except Exception as e:
+            logger.error(f"Error getting task metrics: {str(e)}")
+            return {'error': str(e), 'overall_health': 'unhealthy'}
 
 
 
