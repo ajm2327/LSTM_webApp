@@ -16,20 +16,29 @@ from auth.routes import auth, login_manager
 from auth.api_keys import api_keys
 from dotenv import load_dotenv
 from background.tasks import init_background_tasks
+from config import init_config
 
 
 load_dotenv()
 
+#set environment variable for tensorflow GPU (just getting rid of missing GPU error)
+os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
+os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
 
 #initialize logging system
 loggers = setup_logging()
 logger = logging.getLogger('api')
+
+
 #Configuration
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'dev-secret-key')
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SESSION_TYPE'] = 'filesystem'
+
+#initialize all configurations
+config = init_config(app)
 
 #initialize extensions
 db.init_app(app)
@@ -45,6 +54,7 @@ app.register_blueprint(api_keys, url_prefix='/api')
 
 #initialize background tasks
 background_tasks = init_background_tasks(app)
+app.task_manager = background_tasks
 
 
 
@@ -267,15 +277,22 @@ def health_check():
 
     #check redis
     try:
-        test_key = 'health_check_test'
-        app.redis_client.set(test_key, 'test_value', ex=60) #60 second expiry
-        test_value = app.redis_client.get(test_key)
-        if test_value != b'test_value':
-            raise Exception('Redis value mismatch')
-        health_status['components']['redis'] = {
-            'status': 'healthy',
-            'message': 'Redis connection successful'
-        }
+        if hasattr(app, 'redis_client') and app.redis_client:
+            test_key = 'health_check_test'
+            app.redis_client.set(test_key, 'test_value', ex=60) #60 second expiry
+            test_value = app.redis_client.get(test_key)
+            if test_value == b'test_value':
+                health_status['components']['redis'] = {
+                    'status': 'healthy',
+                    'message': 'Redis connection successful'
+                }
+            else:
+                raise Exception('Redis value mismatch')
+        else:
+            health_status['components']['redis'] = {
+                'status': 'warning',
+                'message': 'Redis client not initialized'
+            }
     except Exception as e:
         health_status['components']['redis'] = {
             'status': 'error',
@@ -285,41 +302,53 @@ def health_check():
 
     #Check backgroudn Tasks
     try:
-        jobs = app.task_manager.scheduler.get_jobs()
-        job_status = {}
-        for job in jobs:
-            job_status[job.id] = {
-                'next_run': job.next_run_time.isoformat() if job.next_run_time else None,
-                'last_run': getattr(job, 'last_run_time', None),
-                'status': 'scheduled' if job.next_run_time else 'paused'
+        if hasattr(app, 'task_manager') and app.task_manager:
+            jobs = app.task_manager.scheduler.get_jobs()
+            job_status = {}
+            for job in jobs:
+                job_status[job.id] = {
+                    'next_run': job.next_run_time.isoformat() if job.next_run_time else None,
+                    'last_run': getattr(job, 'last_run_time', None),
+                    'status': 'scheduled' if job.next_run_time else 'paused'
+                }
+            health_status['components']['background_tasks'] = {
+                'status': 'healthy',
+                'jobs': job_status
             }
-        health_status['components']['background_tasks'] = {
-            'status': 'healthy',
-            'jobs': job_status
-        }
+        else:
+            health_status['components']['background_tasks'] = {
+                'status': 'warning',
+                'message': 'Task manager not initialized'
+            }
     except Exception as e:
         health_status['components']['background_tasks'] = {
             'status': 'error',
             'message': str(e)
         }
-        health_status['status'] = 'unhealthy'
+        health_status['status'] = 'degraded'
 
     #check model availability
     try:
         models_path = 'models_saved/'
         available_models = [d for d in os.listdir(models_path) if os.path.isdir(os.path.join(models_path, d))]
-        health_status['components']['models'] = {
-            'status': 'healthy',
-            'available_models': available_models
-        }
+        if available_models:
+            health_status['components']['models'] = {
+                'status': 'healthy',
+                'available_models': available_models
+            }
+        else:
+            health_status['components']['models'] = {
+                'status': 'warning',
+                'message': 'No models available'
+            }
     except Exception as e:
         health_status['components']['models'] = {
             'status': 'error',
             'message': str(e)
         }
-        health_status['status'] = 'unhealthy'
+        health_status['status'] = 'degraded'
     response = jsonify(health_status)
-    response.status_code = 200 if health_status['status'] == 'healthy' else 500
+    response.status_code = 200 if health_status['status'] == 'healthy' else 207
     return response
 
 
