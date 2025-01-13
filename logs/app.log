@@ -895,3 +895,145 @@ LINE 4:             WHERE api_keys = 'd823d4514df572f976f5d2158b4086...
 2025-01-10 14:10:11,234 - apscheduler.scheduler - INFO - Scheduler started
 2025-01-10 14:10:11,418 - root - INFO - Model loaded successfully
 2025-01-10 14:10:35,261 - werkzeug - INFO - 127.0.0.1 - - [10/Jan/2025 14:10:35] "GET /health/check HTTP/1.1" 200 -
+2025-01-10 14:36:17,646 - werkzeug - INFO -  * Detected change in '/home/ajm2327/LSTM_Tool/monitoring/health_monitor.py', reloading
+2025-01-10 14:36:18,537 - werkzeug - INFO -  * Restarting with stat
+2025-01-10 14:36:24,798 - config.redis - INFO - Redis connection established successfully
+2025-01-10 14:36:24,813 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 14:36:24,813 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 14:36:24,814 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 14:36:24,816 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.retrain_model" to job store "default"
+2025-01-10 14:36:24,816 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.update_market_data" to job store "default"
+2025-01-10 14:36:24,817 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.manage_cache" to job store "default"
+2025-01-10 14:36:24,817 - apscheduler.scheduler - INFO - Scheduler started
+2025-01-10 14:36:25,009 - root - INFO - Model loaded successfully
+2025-01-10 14:36:25,043 - werkzeug - WARNING -  * Debugger is active!
+2025-01-10 14:36:25,059 - werkzeug - INFO -  * Debugger PIN: 203-648-885
+2025-01-10 15:00:58,249 - werkzeug - INFO - 127.0.0.1 - - [10/Jan/2025 15:00:58] "GET /health/check HTTP/1.1" 200 -
+2025-01-10 15:02:00,584 - werkzeug - INFO - 127.0.0.1 - - [10/Jan/2025 15:02:00] "GET / HTTP/1.1" 200 -
+2025-01-10 15:04:29,043 - werkzeug - INFO -  * Detected change in '/home/ajm2327/LSTM_Tool/monitoring/health_monitor.py', reloading
+2025-01-10 15:04:29,761 - werkzeug - INFO -  * Restarting with stat
+2025-01-10 15:04:36,211 - config.redis - INFO - Redis connection established successfully
+2025-01-10 15:04:36,224 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 15:04:36,225 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 15:04:36,225 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 15:04:36,228 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.retrain_model" to job store "default"
+2025-01-10 15:04:36,228 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.update_market_data" to job store "default"
+2025-01-10 15:04:36,229 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.manage_cache" to job store "default"
+2025-01-10 15:04:36,229 - apscheduler.scheduler - INFO - Scheduler started
+2025-01-10 15:04:38,955 - root - INFO - Model loaded successfully
+2025-01-10 15:04:38,990 - werkzeug - WARNING -  * Debugger is active!
+2025-01-10 15:04:39,004 - werkzeug - INFO -  * Debugger PIN: 203-648-885
+2025-01-10 15:06:23,937 - werkzeug - INFO - 127.0.0.1 - - [10/Jan/2025 15:06:23] "GET /health/check HTTP/1.1" 200 -
+2025-01-10 15:06:49,968 - werkzeug - INFO -  * Detected change in '/home/ajm2327/LSTM_Tool/monitoring/health_monitor.py', reloading
+2025-01-10 15:06:50,613 - werkzeug - INFO -  * Restarting with stat
+2025-01-10 15:06:54,183 - config.redis - INFO - Redis connection established successfully
+2025-01-10 15:06:54,190 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 15:06:54,190 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 15:06:54,190 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 15:06:54,193 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.retrain_model" to job store "default"
+2025-01-10 15:06:54,194 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.update_market_data" to job store "default"
+2025-01-10 15:06:54,194 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.manage_cache" to job store "default"
+2025-01-10 15:06:54,194 - apscheduler.scheduler - INFO - Scheduler started
+2025-01-10 15:06:54,386 - root - INFO - Model loaded successfully
+2025-01-10 15:06:54,416 - werkzeug - WARNING -  * Debugger is active!
+2025-01-10 15:06:54,419 - werkzeug - INFO -  * Debugger PIN: 203-648-885
+2025-01-10 15:11:50,041 - werkzeug - INFO - 127.0.0.1 - - [10/Jan/2025 15:11:50] "GET /health/check HTTP/1.1" 200 -
+2025-01-10 15:17:15,909 - werkzeug - INFO - 127.0.0.1 - - [10/Jan/2025 15:17:15] "GET /health/check HTTP/1.1" 200 -
+2025-01-10 15:19:43,157 - werkzeug - INFO -  * Detected change in '/home/ajm2327/LSTM_Tool/monitoring/health_monitor.py', reloading
+2025-01-10 15:19:43,832 - werkzeug - INFO -  * Restarting with stat
+2025-01-10 15:19:47,217 - config.redis - INFO - Redis connection established successfully
+2025-01-10 15:19:47,225 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 15:19:47,225 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 15:19:47,226 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 15:19:47,228 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.retrain_model" to job store "default"
+2025-01-10 15:19:47,228 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.update_market_data" to job store "default"
+2025-01-10 15:19:47,229 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.manage_cache" to job store "default"
+2025-01-10 15:19:47,229 - apscheduler.scheduler - INFO - Scheduler started
+2025-01-10 15:19:47,419 - root - INFO - Model loaded successfully
+2025-01-10 15:19:47,448 - werkzeug - WARNING -  * Debugger is active!
+2025-01-10 15:19:47,450 - werkzeug - INFO -  * Debugger PIN: 203-648-885
+2025-01-10 15:22:42,817 - werkzeug - INFO - 127.0.0.1 - - [10/Jan/2025 15:22:42] "GET /health/check HTTP/1.1" 200 -
+2025-01-10 15:28:14,185 - werkzeug - INFO - 127.0.0.1 - - [10/Jan/2025 15:28:14] "GET /health/check HTTP/1.1" 200 -
+2025-01-10 15:33:43,642 - werkzeug - INFO - 127.0.0.1 - - [10/Jan/2025 15:33:43] "GET /health/check HTTP/1.1" 200 -
+2025-01-10 15:35:08,105 - werkzeug - INFO -  * Detected change in '/home/ajm2327/LSTM_Tool/monitoring/health_monitor.py', reloading
+2025-01-10 15:35:08,721 - werkzeug - INFO -  * Restarting with stat
+2025-01-10 15:35:12,293 - config.redis - INFO - Redis connection established successfully
+2025-01-10 15:35:12,305 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 15:35:12,305 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 15:35:12,305 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 15:35:12,307 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.retrain_model" to job store "default"
+2025-01-10 15:35:12,308 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.update_market_data" to job store "default"
+2025-01-10 15:35:12,308 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.manage_cache" to job store "default"
+2025-01-10 15:35:12,308 - apscheduler.scheduler - INFO - Scheduler started
+2025-01-10 15:35:12,543 - root - INFO - Model loaded successfully
+2025-01-10 15:35:12,598 - werkzeug - WARNING -  * Debugger is active!
+2025-01-10 15:35:12,600 - werkzeug - INFO -  * Debugger PIN: 203-648-885
+2025-01-10 15:36:46,761 - werkzeug - INFO -  * Detected change in '/home/ajm2327/LSTM_Tool/monitoring/health_monitor.py', reloading
+2025-01-10 15:36:47,397 - werkzeug - INFO -  * Restarting with stat
+2025-01-10 15:36:51,020 - config.redis - INFO - Redis connection established successfully
+2025-01-10 15:36:51,027 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 15:36:51,027 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 15:36:51,028 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 15:36:51,030 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.retrain_model" to job store "default"
+2025-01-10 15:36:51,030 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.update_market_data" to job store "default"
+2025-01-10 15:36:51,030 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.manage_cache" to job store "default"
+2025-01-10 15:36:51,031 - apscheduler.scheduler - INFO - Scheduler started
+2025-01-10 15:36:51,226 - root - INFO - Model loaded successfully
+2025-01-10 15:36:51,256 - werkzeug - WARNING -  * Debugger is active!
+2025-01-10 15:36:51,258 - werkzeug - INFO -  * Debugger PIN: 203-648-885
+2025-01-10 15:38:10,948 - werkzeug - INFO -  * Detected change in '/home/ajm2327/LSTM_Tool/monitoring/health_monitor.py', reloading
+2025-01-10 15:38:11,572 - werkzeug - INFO -  * Restarting with stat
+2025-01-10 15:38:15,374 - config.redis - INFO - Redis connection established successfully
+2025-01-10 15:38:15,385 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 15:38:15,386 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 15:38:15,386 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 15:38:15,388 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.retrain_model" to job store "default"
+2025-01-10 15:38:15,389 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.update_market_data" to job store "default"
+2025-01-10 15:38:15,389 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.manage_cache" to job store "default"
+2025-01-10 15:38:15,389 - apscheduler.scheduler - INFO - Scheduler started
+2025-01-10 15:38:15,626 - root - INFO - Model loaded successfully
+2025-01-10 15:38:15,659 - werkzeug - WARNING -  * Debugger is active!
+2025-01-10 15:38:15,662 - werkzeug - INFO -  * Debugger PIN: 203-648-885
+2025-01-10 15:39:09,246 - werkzeug - INFO - 127.0.0.1 - - [10/Jan/2025 15:39:09] "GET /health/check HTTP/1.1" 200 -
+2025-01-10 15:44:35,461 - werkzeug - INFO - 127.0.0.1 - - [10/Jan/2025 15:44:35] "GET /health/check HTTP/1.1" 200 -
+2025-01-10 15:49:59,402 - werkzeug - INFO - 127.0.0.1 - - [10/Jan/2025 15:49:59] "GET /health/check HTTP/1.1" 200 -
+2025-01-10 15:55:27,900 - werkzeug - INFO - 127.0.0.1 - - [10/Jan/2025 15:55:27] "GET /health/check HTTP/1.1" 200 -
+2025-01-10 16:14:37,479 - werkzeug - INFO -  * Detected change in '/home/ajm2327/LSTM_Tool/tests/test_email.py', reloading
+2025-01-10 16:14:38,393 - werkzeug - INFO -  * Restarting with stat
+2025-01-10 16:14:45,171 - config.redis - INFO - Redis connection established successfully
+2025-01-10 16:14:45,186 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 16:14:45,186 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 16:14:45,186 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 16:14:45,189 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.retrain_model" to job store "default"
+2025-01-10 16:14:45,190 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.update_market_data" to job store "default"
+2025-01-10 16:14:45,190 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.manage_cache" to job store "default"
+2025-01-10 16:14:45,191 - apscheduler.scheduler - INFO - Scheduler started
+2025-01-10 16:14:45,407 - root - INFO - Model loaded successfully
+2025-01-10 16:14:45,443 - werkzeug - WARNING -  * Debugger is active!
+2025-01-10 16:14:45,457 - werkzeug - INFO -  * Debugger PIN: 203-648-885
+2025-01-10 16:16:12,572 - werkzeug - INFO -  * Detected change in '/home/ajm2327/LSTM_Tool/tests/test_email.py', reloading
+2025-01-10 16:16:13,262 - werkzeug - INFO -  * Restarting with stat
+2025-01-10 16:16:17,216 - config.redis - INFO - Redis connection established successfully
+2025-01-10 16:16:17,225 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 16:16:17,225 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 16:16:17,226 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 16:16:17,228 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.retrain_model" to job store "default"
+2025-01-10 16:16:17,228 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.update_market_data" to job store "default"
+2025-01-10 16:16:17,228 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.manage_cache" to job store "default"
+2025-01-10 16:16:17,228 - apscheduler.scheduler - INFO - Scheduler started
+2025-01-10 16:16:17,449 - root - INFO - Model loaded successfully
+2025-01-10 16:16:17,478 - werkzeug - WARNING -  * Debugger is active!
+2025-01-10 16:16:17,481 - werkzeug - INFO -  * Debugger PIN: 203-648-885
+2025-01-10 16:19:22,085 - werkzeug - INFO -  * Detected change in '/home/ajm2327/LSTM_Tool/tests/test_email.py', reloading
+2025-01-10 16:19:22,872 - werkzeug - INFO -  * Restarting with stat
+2025-01-10 16:19:26,337 - config.redis - INFO - Redis connection established successfully
+2025-01-10 16:19:26,352 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 16:19:26,352 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 16:19:26,353 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-10 16:19:26,356 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.retrain_model" to job store "default"
+2025-01-10 16:19:26,357 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.update_market_data" to job store "default"
+2025-01-10 16:19:26,357 - apscheduler.scheduler - INFO - Added job "BackgroundTaskManager.manage_cache" to job store "default"
+2025-01-10 16:19:26,358 - apscheduler.scheduler - INFO - Scheduler started
+2025-01-10 16:19:26,580 - root - INFO - Model loaded successfully
+2025-01-10 16:19:26,609 - werkzeug - WARNING -  * Debugger is active!
+2025-01-10 16:19:26,611 - werkzeug - INFO -  * Debugger PIN: 203-648-885
