@@ -7,13 +7,11 @@ from models.lstm_model import StockPredictor
 from database.db import db
 from sqlalchemy import text
 import logging
-from redis import Redis
 import json
 import os
-from dotenv import load_dotenv
+from flask import current_app
 
 
-load_dotenv()
 
 logger = logging.getLogger('background_tasks')
 
@@ -21,18 +19,64 @@ class BackgroundTaskManager:
     def __init__(self, app=None):
         self.scheduler = BackgroundScheduler()
         self.predictor = StockPredictor()
-        self.redis = Redis.from_url(os.getenv('REDIS_URL', 'redis://localhost:6379/0'))
-        self.max_requests = int(os.getenv('RATE_LIMIT_REQUESTS', '100'))
-        self.window_size = int(os.getenv('RATE_LIMIT_WINDOW', '3600'))
+        self.app = app
         if app:
             self.init_app(app)
+    
+    def init_app(self, app):
+        """initialize with flask app context"""
+        self.app = app
+        self.setup_jobs()
+        self.scheduler.start()
 
+    @property
+    def redis_client(self):
+        """Get redis client from app context"""
+        return current_app.redis_client if current_app else self.app.redis_client
+    
     def set_task_status(self, task_name, status, error=None):
         """Helper to set task status in Redis"""
-        self.redis.set(f'task:{task_name}:status', status)
-        if error:
-            self.redis.set(f'task:{task_name}:status', status)
+        if self.redis_client:
+            self.redis_client.set(f'task:{task_name}:status', status)
+            if error:
+                self.redis_client.set(f'task:{task_name}:error', str(error))
 
+    def get_task_metrics(self):
+        """Get metrics for background tasks"""
+        metrics = {
+            'tasks':{},
+            'overall_health': 'healthy'
+        }
+        try:
+            jobs = self.scheduler.get_jobs()
+
+            for job in jobs:
+                job_id = job.id
+                if self.redis_client:
+                    execution_key = f"task_execution:{job_id}"
+                    execution_history = self.redis_client.lrange(execution_key, 0, -1)
+
+                    total_runs = len(execution_history)
+                    if total_runs > 0:
+                        successes = sum(1 for result in execution_history if b'success' in result)
+                        success_rate = (successes / total_runs) * 100
+
+                    else:
+                        success_rate = None
+
+                    metrics['tasks'][job_id] = {
+                        'last_run': job.next_run_time.isoformat() if job.next_run_time else None,
+                        'next_run': job.next_run_time.isoformat() if job.next_run_time else None,
+                        'total_runs': total_runs,
+                        'success_rate': success_rate,
+                        'status': 'active' if job.next_run_time else 'paused'
+                    }
+                return metrics
+        except Exception as e:
+            logger.error(f"Error getting task metrics: {str(e)}")
+            return {'error': str(e), 'overall_health': 'unhealthy'}
+        
+    
     def get_recent_tickers(self, days=7):
         """Database-agnostic way to get recent tickers"""
         try:

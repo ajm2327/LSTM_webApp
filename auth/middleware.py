@@ -8,7 +8,6 @@ import hashlib
 import os
 import logging
 import json
-from redis import Redis
 from .config import AuthConfig
 from sqlalchemy import text
 
@@ -64,7 +63,7 @@ class RateLimit:
     """Handles rate limiting logic"""
 
     def __init__(self):
-        self.redis = Redis.from_url(AuthConfig.REDIS_URL)
+        self.redis_client = current_app.redis_client
         self.max_requests = AuthConfig.RATE_LIMIT_REQUESTS
         self.window_size = AuthConfig.RATE_LIMIT_WINDOW
 
@@ -74,8 +73,11 @@ class RateLimit:
     
     def is_rate_limited(self, user_id):
         """Check if user is rate limited"""
+        if not self.redis_client:
+            return False #Fail open if redis is not available
+        
         key = self.get_rate_limit_key(user_id)
-        pipe = self.redis.pipeline()
+        pipe = self.redis_client.pipeline()
 
         try:
             #Atomic rate limit check
@@ -84,7 +86,7 @@ class RateLimit:
             current_count = pipe.execute()[0]
 
             if current_count == 1: #First request in new window
-                self.redis.expire(key, self.window_size)
+                self.redis_client.expire(key, self.window_size)
 
             is_limited = current_count > self.max_requests
 
@@ -99,8 +101,11 @@ class RateLimit:
 
     def get_remaining_requests(self, user_id):
         """get remaining requests in current window"""
+        if not self.redis_client:
+            return self.max_requests
+        
         key = self.get_rate_limit_key(user_id)
-        current_count = self.redis.get(key)
+        current_count = self.redis_client.get(key)
         if current_count is None:
             return self.max_requests
         return max(0, self.max_requests - int(current_count))
@@ -109,12 +114,16 @@ class SecurityTracker:
     """Tracks security-related events"""
 
     def __init__(self):
-        self.redis = Redis.from_url(AuthConfig.REDIS_URL)
+        #using centralized redis client
+        self.redis_client = current_app.redis_client
 
     def track_failed_attempt(self, identifier):
         """Track failed authentication attempts"""
+        if not self.redis_client:
+            return False #Fail open if Redis is not available
+        
         key = f"failed_attempts:{identifier}"
-        pipe = self.redis.pipeline()
+        pipe = self.redis_client.pipeline()
         pipe.incr(key)
         pipe.expire(key, int(AuthConfig.FAILED_ATTEMPTS_WINDOW.total_seconds()))
         count = pipe.execute()[0]
