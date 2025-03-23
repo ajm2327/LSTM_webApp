@@ -1,14 +1,17 @@
 import React from 'react';
 import { Menu, Search } from 'lucide-react';
 
-const Header = () => {
+const Header = ({ toggleSidebar }) => {
     return (
         <header className="bg-white shadow-md">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16">
                     {/* Left section w logo/brand */}
                     <div className="flex items-center">
-                        <button className="p-2 roudned-md text-gray-600 hover:text-gray-900 focus:outline-none">
+                        <button
+                            onClick={toggleSidebar}
+                            className="p-2 rounded-md text-gray-600 hover:text-gray-900 focus:outline-none md:hidden"
+                        >
                             <Menu className="h-6 w-6" />
                         </button>
                         <div className="ml-4 font-bold text-xl text-gray-900">LSTM STOCK PREDICTOR</div>
