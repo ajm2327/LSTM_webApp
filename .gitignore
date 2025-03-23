@@ -41,3 +41,4 @@ logs/
 
 # Model files
 models_saved/
+node_modules
