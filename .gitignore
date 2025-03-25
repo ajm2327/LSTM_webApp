@@ -42,3 +42,6 @@ logs/
 # Model files
 models_saved/
 node_modules/
+
+#migrations
+migrations/
